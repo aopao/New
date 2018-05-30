@@ -7,11 +7,6 @@ namespace App\Http\Controllers\Admin;
  *
  * @package App\Http\Controllers\Admin
  */
-/**
- * Class ApiController
- *
- * @package App\Http\Controllers\Admin
- */
 class ApiController extends BaseController
 {
 	/**
@@ -24,7 +19,7 @@ class ApiController extends BaseController
 	 *
 	 * @param $statusCode
 	 */
-	public function __construct($statusCode)
+	public function __construct($statusCode = 200)
 	{
 		$this->statusCode = $statusCode;
 	}

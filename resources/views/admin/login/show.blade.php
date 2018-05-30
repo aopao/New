@@ -10,8 +10,8 @@
             </div>
             <div class="layadmin-user-login-box layadmin-user-login-body layui-form">
                 <div class="layui-form-item">
-                    <label class="layadmin-user-login-icon layui-icon layui-icon-username" for="LAY-user-login-username"></label>
-                    <input type="text" name="account" id="LAY-user-login-username" lay-verify="required" placeholder="@lang('login.account')" class="layui-input">
+                    <label class="layadmin-user-login-icon layui-icon layui-icon-username" for="LAY-user-login-account"></label>
+                    <input type="text" name="account" id="LAY-user-login-account" lay-verify="required" placeholder="@lang('login.account')" class="layui-input">
                 </div>
                 <div class="layui-form-item">
                     <label class="layadmin-user-login-icon layui-icon layui-icon-password" for="LAY-user-login-password"></label>
