@@ -40,6 +40,7 @@ class LoginController extends ApiController
 	 */
 	public function __construct()
 	{
+		parent::__construct(200);
 		$this->middleware('guest')->except('logout');
 		$this->redirectTo = config('admin.prefix') . '/dashboard';
 	}
@@ -78,7 +79,7 @@ class LoginController extends ApiController
 				if (Auth::check()) {
 					$data = [
 						"access_token" => Auth::user()->mobile ,
-						"redirect" => route('admin.index') ,
+						"redirect" => route('admin.dashboard.index') ,
 					];
 					return $this->setStatusCode(200)->responseSuccess($data);
 				}

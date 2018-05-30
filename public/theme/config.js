@@ -14,7 +14,7 @@ layui.define(['laytpl', 'layer', 'element', 'util'], function(exports){
     ,views: layui.cache.base + 'tpl/' //动态模板所在目录
     ,entry: 'index' //默认视图文件名
     ,engine: '.html' //视图文件后缀名
-    ,pageTabs: false //是否开启页面选项卡功能。iframe 常规版推荐开启
+    ,pageTabs: true //是否开启页面选项卡功能。iframe 常规版推荐开启
     
     ,name: '黑马高考后台管理系统'
     ,tableName: 'HeiMa' //本地存储表名
@@ -48,6 +48,11 @@ layui.define(['laytpl', 'layer', 'element', 'util'], function(exports){
     ,theme: {
       //配色方案，如果用户未设置主题，第一个将作为默认
       color: [{
+		  main: '#344058'
+		  ,logo: '#1E9FFF'
+		  ,selected: '#1E9FFF'
+		  ,alias: 'ocean' //海洋
+	  },{
         main: '#20222A' //主题色
         ,selected: '#009688' //选中色
         ,alias: 'default' //默认别名
@@ -63,11 +68,6 @@ layui.define(['laytpl', 'layer', 'element', 'util'], function(exports){
         main: '#50314F'
         ,selected: '#7A4D7B'
         ,alias: 'purple-red' //紫红
-      },{
-        main: '#344058'
-        ,logo: '#1E9FFF'
-        ,selected: '#1E9FFF'
-        ,alias: 'ocean' //海洋
       },{
         main: '#3A3D49'
         ,logo: '#2F9688'

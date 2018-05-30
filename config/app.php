@@ -65,7 +65,7 @@ return [
 	|
 	*/
 	
-	'timezone' => 'UTC' ,
+	'timezone' => 'PRC' ,
 	
 	/*
 	|--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
 	|
 	*/
 	
-	'locale' => 'en' ,
+	'locale' => 'zh-cn' ,
 	
 	/*
 	|--------------------------------------------------------------------------
@@ -180,7 +180,7 @@ return [
 		/*
  		* Our Service Providers...
  		*/
-	
+		App\Providers\ComposerServiceProvider::class,
 	] ,
 	
 	/*

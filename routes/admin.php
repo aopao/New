@@ -15,6 +15,7 @@ Route::namespace('Admin')->prefix(PREFIX)->group(function() {
 ##后台具体业务路由##
 Route::namespace('Admin')->prefix(PREFIX)->middleware('auth')->group(function() {
 	##后台首页路由##
-	Route::get('/' , 'DashboardController@index')->name('admin.index');
-	Route::get('dashboard' , 'DashboardController@index')->name('admin.index');
+	Route::get('/' , 'DashboardController@index')->name('admin.dashboard.index');
+	Route::get('dashboard' , 'DashboardController@index')->name('admin.dashboard.index');
+	Route::get('dashboard/show' , 'DashboardController@show')->name('admin.dashboard.show');
 });
