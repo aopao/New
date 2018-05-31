@@ -15,5 +15,5 @@ return [
 	'seo_description' => 'SEO描述' ,
 	'analyze_code' => '统计代码' ,
 	'copyright' => '网站版权' ,
-	'submit' => '提交' ,
+	'submit' => '提交修改' ,
 ];

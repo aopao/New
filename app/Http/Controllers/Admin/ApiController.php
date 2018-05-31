@@ -73,7 +73,7 @@ class ApiController extends BaseController
 	 * @param string $message
 	 * @return \Illuminate\Http\JsonResponse
 	 */
-	public function responseSuccess($data , $message = 'Success')
+	public function responseSuccess($data = [] , $message = 'Success')
 	{
 		return $this->response([
 			'code' => 0 ,

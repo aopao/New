@@ -24,5 +24,6 @@ Route::namespace('Admin')->prefix(PREFIX)->middleware('auth')->group(function() 
 	Route::post('config/update' , 'ConfigController@update')->name('admin.config.update');
 	
 	##文章分类路由##
+	Route::get('category/list' , 'CategoryController@list')->name('admin.category.list');
 	Route::resource('category' , 'CategoryController' , [ 'as' => 'admin' ]);
 });

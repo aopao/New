@@ -5,11 +5,11 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * Class ConfigRequest
+ * Class CategoryRequest
  *
  * @package App\Http\Requests
  */
-class ConfigRequest extends FormRequest
+class CategoryRequest extends FormRequest
 {
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -29,7 +29,7 @@ class ConfigRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			'web_name' => 'required|min:1|max:100' ,
+			'name' => 'required|min:1|max:100' ,
 		];
 	}
 	
@@ -39,9 +39,8 @@ class ConfigRequest extends FormRequest
 	public function messages()
 	{
 		return [
-			'web_name.required' => '用户名必须填写' ,
-			'web_name.min' => '用户名最少一个字符' ,
+			'name.required' => '分类名称必须填写' ,
+			'name.min' => '分类名称最少一个字符' ,
 		];
 	}
-	
 }
