@@ -4,7 +4,8 @@
             <span>layuiAdmin</span>
         </div>
 
-        <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu" lay-filter="layadmin-system-side-menu">
+        <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu"
+            lay-filter="layadmin-system-side-menu">
             <li data-name="home" class="layui-nav-item">
                 <a href="javascript:;" lay-tips="主页" lay-direction="2">
                     <i class="layui-icon layui-icon-home"></i>
@@ -23,21 +24,21 @@
                 </a>
                 <dl class="layui-nav-child">
                     <dd>
-                       <a lay-href="{{ route('admin.article.create') }}">添加文章</a>
+                        <a lay-href="{{ route('admin.article.create') }}">添加文章</a>
                     </dd>
                 </dl>
-            </li>
-            <li data-name="user" class="layui-nav-item">
-                <a href="javascript:;" lay-tips="用户" lay-direction="2">
-                    <i class="layui-icon layui-icon-list"></i>
-                    <cite>分类管理</cite>
-                </a>
                 <dl class="layui-nav-child">
                     <dd>
-                       <a lay-href="{{ route('admin.category.index') }}">添加分类</a>
+                        <a lay-href="{{ route('admin.category.index') }}">分类管理</a>
+                    </dd>
+                </dl>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a lay-href="{{ route('admin.category.index') }}">来源管理</a>
                     </dd>
                 </dl>
             </li>
+
             <li data-name="user" class="layui-nav-item">
                 <a href="javascript:;" lay-tips="用户" lay-direction="2">
                     <i class="layui-icon layui-icon-set"></i>

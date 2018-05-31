@@ -16,7 +16,10 @@ class CategoryListPresenter
 	 */
 	public function getSelectHtml($array , $id = 0)
 	{
-		$html = '';
+        $html = '';
+        if (! is_array($array)){
+            return $html;
+        }
 		foreach ($array as $key => $value) {
 			if ($value[ 'level' ] == 0) {
 				$space = '';
