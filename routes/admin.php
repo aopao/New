@@ -26,4 +26,8 @@ Route::namespace('Admin')->prefix(PREFIX)->middleware('auth')->group(function() 
 	##文章分类路由##
 	Route::get('category/list' , 'CategoryController@list')->name('admin.category.list');
 	Route::resource('category' , 'CategoryController' , [ 'as' => 'admin' ]);
+	
+	##文章路由##
+	Route::get('article/list' , 'ArticleController@list')->name('admin.article.list');
+	Route::resource('article' , 'ArticleController' , [ 'as' => 'admin' ]);
 });

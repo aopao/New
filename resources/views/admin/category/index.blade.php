@@ -13,6 +13,7 @@
               <script type="text/html" id="categorListOperate">
               <button class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit">编辑</button>
               <button class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</button>
+                  <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
             </script>
           </div>
         </div>

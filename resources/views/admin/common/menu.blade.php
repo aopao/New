@@ -23,7 +23,7 @@
                 </a>
                 <dl class="layui-nav-child">
                     <dd>
-                       <a lay-href="{{ route('admin.config.index') }}">添加文章</a>
+                       <a lay-href="{{ route('admin.article.create') }}">添加文章</a>
                     </dd>
                 </dl>
             </li>
