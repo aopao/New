@@ -30,4 +30,7 @@ Route::namespace('Admin')->prefix(PREFIX)->middleware('auth')->group(function() 
 	##文章路由##
 	Route::get('article/list' , 'ArticleController@list')->name('admin.article.list');
 	Route::resource('article' , 'ArticleController' , [ 'as' => 'admin' ]);
+	
+	##友情链接路由##
+	Route::resource('link' , 'FriendLinkController' , [ 'as' => 'admin' ]);
 });
