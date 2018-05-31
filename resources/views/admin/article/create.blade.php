@@ -2,12 +2,11 @@
 @section('content')
     <div class="layui-fluid">
    <div class="fly-panel" pad20="" style="padding-top: 5px;">
-    <!--<div class="fly-none">没有权限</div>-->
-    <div class="layui-form layui-form-pane">
-      <div class="layui-tab layui-tab-brief" lay-filter="user">
-        <ul class="layui-tab-title">
-          <li class="layui-this">发表新帖<!-- 编辑帖子 --></li>
-        </ul>
+        <div class="layui-form layui-form-pane">
+             <div class="layui-card">
+                <div class="layui-card-header">@lang('category.category_add')</div>
+                <div class="layui-card-body" pad15="2">
+                          <div class="layui-tab layui-tab-brief" lay-filter="user">
         <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
           <div class="layui-tab-item layui-show">
             <form action="" method="post">
@@ -74,6 +73,8 @@
           </div>
         </div>
       </div>
+                </div>
+            </div>
     </div>
   </div>
 </div>
@@ -83,9 +84,9 @@
 		var ue = UE.getEditor('container', {
 			toolbars: [
 				['bold',
-                    'italic', 'underline', 'strikethrough', 'blockquote', 'insertunorderedlist',
-					'insertorderedlist', 'justifyleft', 'justifycenter', 'justifyright', 'link', 'insertimage','emotion', //表情
-					'spechars',  'source', //源代码
+					'italic', 'underline', 'strikethrough', 'blockquote', 'insertunorderedlist',
+					'insertorderedlist', 'justifyleft', 'justifycenter', 'justifyright', 'link', 'insertimage', 'emotion', //表情
+					'spechars', 'source', //源代码
 					'fullscreen'
 				]
 			],
@@ -95,7 +96,7 @@
 			wordCount: false,
 			imagePopup: false,
 			autoHeightEnabled: true,
-			zIndex:2,
+			zIndex: 2,
 			initialFrameHeight: 400,
 			autotypeset: {indent: true, imageBlockLine: 'center'}
 		});
