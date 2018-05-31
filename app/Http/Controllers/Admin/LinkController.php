@@ -18,7 +18,7 @@ class LinkController extends ApiController
 	
 	public function index()
 	{
-		$linkInfo = $this->linkServices->getSingleArrayInfo();
+		$linkInfo = $this->linkServices->getAll();
 		return view('admin.link.index' , compact('linkInfo'));
 	}
 	

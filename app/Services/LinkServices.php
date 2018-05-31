@@ -6,7 +6,7 @@ namespace App\Services;
 use App\Repositories\LinkRepository;
 
 /**
- * Class LinkRepository
+ * Class LinkServices
  *
  * @package App\Services
  */
@@ -16,8 +16,8 @@ class LinkServices
 	 * @var linkRepository
 	 */
 	private $linkRepository;
-	
-	
+
+
 	/**
 	 * LinkServices constructor.
 	 *
@@ -27,7 +27,7 @@ class LinkServices
 	{
 		$this->linkRepository = $linkRepository;
 	}
-	
+
 	/**
 	 * @return \Illuminate\Database\Eloquent\Collection|static[]
 	 */
@@ -35,17 +35,9 @@ class LinkServices
 	{
 		return $this->linkRepository->getAll();
 	}
-	
-	/**
-	 * @return array
-	 */
-	public function getSingleArrayInfo()
-	{
-		$info = $this->getAll();
-		return $info;
-	}
-	
-	
+
+
+
 	/**
 	 * @param array $array
 	 * @return bool
@@ -58,7 +50,7 @@ class LinkServices
 		}
 		else
 		{
-			if ($this->linkRepository->updateByName($array)) {
+			if ($this->linkRepository->update($array)) {
 				return TRUE;
 			} else {
 				return FALSE;
@@ -66,6 +58,6 @@ class LinkServices
 		}
 
 	}
-	
-	
+
+
 }

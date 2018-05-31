@@ -15,7 +15,7 @@ class LinkRepository
 	 * @var link
 	 */
 	private $link;
-	
+
 	/**
 	 * LinkRepository constructor.
 	 *
@@ -25,7 +25,7 @@ class LinkRepository
 	{
 		$this->link = $link;
 	}
-	
+
 	/**
 	 * @return \Illuminate\Database\Eloquent\Collection|static[]
 	 */
@@ -33,20 +33,17 @@ class LinkRepository
 	{
 		return $this->link->all();
 	}
-	
-	
+
+
 	/**
-	 * 根据字段名来更新系统配置
+	 * 更新友情链接
 	 * @param $array
 	 * @return bool
 	 */
-	public function updateByName($array)
+	public function update($array)
 	{
-		$flag = TRUE;
-		foreach ($array as $item) {
-			$flag = $this->link->where("id" , $item['id'])->update([ "title" => $item['title'],"pic" => $item['pic'],"url" => $item['url'],"type" => $item['type'],"seat" => $item['seat'],"status" => $item['status'], ]);
-		}
+		$flag = $this->link->where("id" , $array['id'])->update([ "title" => $array['title'],"pic" => $array['pic'],"url" => $array['url'],"type" => $array['type'],"seat" => $array['seat'],"status" => $array['status'], ]);
 		return $flag;
 	}
-	
+
 }
