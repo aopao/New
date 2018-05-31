@@ -181,6 +181,7 @@ return [
  		* Our Service Providers...
  		*/
 		App\Providers\ComposerServiceProvider::class,
+		Overtrue\LaravelUEditor\UEditorServiceProvider::class,
 	] ,
 	
 	/*

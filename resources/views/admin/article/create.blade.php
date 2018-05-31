@@ -1,4 +1,4 @@
-@extends('admin.layouts.iframe_layout')
+@extends('admin.layouts.iframe_layout')@include('vendor.ueditor.assets')
 @section('content')
     <div class="layui-fluid">
    <div class="fly-panel" pad20="" style="padding-top: 5px;">
@@ -23,7 +23,8 @@
                       <option value="101">建议</option>
                       <option value="168">公告</option>
                       <option value="169">动态</option>
-                    </select><div class="layui-unselect layui-form-select"><div class="layui-select-title"><input type="text" placeholder="请选择" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i></div><dl class="layui-anim layui-anim-upbit" style=""><dd lay-value="" class="layui-select-tips">请选择</dd><dd lay-value="0" class="">提问</dd><dd lay-value="99" class="">分享</dd><dd lay-value="100" class="layui-this">讨论</dd><dd lay-value="101" class="">建议</dd><dd lay-value="168" class="">公告</dd><dd lay-value="169" class="">动态</dd></dl></div>
+                    </select><div class="layui-unselect layui-form-select"><div class="layui-select-title"><input type="text" placeholder="请选择" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i></div><dl class="layui-anim layui-anim-upbit" style=""><dd lay-value="" class="layui-select-tips">请选择</dd><dd lay-value="0" class="">提问</dd><dd lay-value="99" class="">分享</dd><dd lay-value="100" class="layui-this">讨论</dd><dd lay-value="101" class="">建议</dd><dd
+                                      lay-value="168" class="">公告</dd><dd lay-value="169" class="">动态</dd></dl></div>
                   </div>
                 </div>
                 <div class="layui-col-md9">
@@ -44,7 +45,9 @@
                       <option value="独立版layDate">独立版layDate</option>
                       <option value="LayIM">LayIM</option>
                       <option value="Fly社区模板">Fly社区模板</option>
-                    </select><div class="layui-unselect layui-form-select"><div class="layui-select-title"><input type="text" placeholder="请选择" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i></div><dl class="layui-anim layui-anim-upbit"><dd lay-value="" class="layui-select-tips">请选择</dd><dd lay-value="layui" class="">layui</dd><dd lay-value="独立版layer" class="">独立版layer</dd><dd lay-value="独立版layDate" class="">独立版layDate</dd><dd lay-value="LayIM" class="">LayIM</dd><dd lay-value="Fly社区模板" class="">Fly社区模板</dd></dl></div>
+                    </select><div class="layui-unselect layui-form-select"><div class="layui-select-title"><input type="text" placeholder="请选择" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i></div><dl class="layui-anim layui-anim-upbit"><dd lay-value="" class="layui-select-tips">请选择</dd><dd lay-value="layui" class="">layui</dd><dd lay-value="独立版layer" class="">独立版layer</dd><dd lay-value="独立版layDate" class="">独立版layDate</dd><dd lay-value="LayIM"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  class="">LayIM</dd><dd
+                                      lay-value="Fly社区模板" class="">Fly社区模板</dd></dl></div>
                   </div>
                 </div>
                 <div class="layui-col-md3">
@@ -60,37 +63,12 @@
                   </div>
                 </div>
               </div>
-              <div class="layui-form-item layui-form-text">
-                <div class="layui-input-block"><div class="layui-unselect fly-edit"><span type="face" title="插入表情"><i class="iconfont icon-yxj-expression" style="top: 1px;"></i></span><span type="picture" title="插入图片：img[src]"><i class="iconfont icon-tupian"></i></span><span type="href" title="超链接格式：a(href)[text]"><i class="iconfont icon-lianjie"></i></span><span type="code" title="插入代码或引用"><i class="iconfont icon-emwdaima" style="top: 1px;"></i></span><span type="hr" title="插入水平线">hr</span><span type="yulan" title="预览"><i class="iconfont icon-yulan1"></i></span></div>
-                  <textarea id="L_content" name="content" required="" lay-verify="required" placeholder="详细描述" class="layui-textarea fly-editor" style="height: 260px;"></textarea>
-                </div>
+              <div class="layui-form-item" style="height: 200px">
+                  <!-- 编辑器容器 -->
+                    <script id="container" name="content" type="text/plain"></script>
+                    <button class="layui-btn" style="margin-top: 15px;" lay-filter="*" lay-submit="">立即发布</button>
               </div>
               <div class="layui-form-item">
-                <div class="layui-inline">
-                  <label class="layui-form-label">悬赏飞吻</label>
-                  <div class="layui-input-inline" style="width: 190px;">
-                    <select name="experience">
-                      <option value="20">20</option>
-                      <option value="30">30</option>
-                      <option value="50">50</option>
-                      <option value="60">60</option>
-                      <option value="80">80</option>
-                    </select><div class="layui-unselect layui-form-select"><div class="layui-select-title"><input type="text" placeholder="请选择" value="20" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i></div><dl class="layui-anim layui-anim-upbit" style=""><dd lay-value="20" class="layui-this">20</dd><dd lay-value="30" class="">30</dd><dd lay-value="50" class="">50</dd><dd lay-value="60" class="">60</dd><dd lay-value="80" class="">80</dd></dl></div>
-                  </div>
-                  <div class="layui-form-mid layui-word-aux">发表后无法更改飞吻</div>
-                </div>
-              </div>
-              <div class="layui-form-item">
-                <label for="L_vercode" class="layui-form-label">人类验证</label>
-                <div class="layui-input-inline">
-                  <input type="text" id="L_vercode" name="vercode" required="" lay-verify="required" placeholder="请回答后面的问题" autocomplete="off" class="layui-input">
-                </div>
-                <div class="layui-form-mid">
-                  <span style="color: #c00;">1+1=?</span>
-                </div>
-              </div>
-              <div class="layui-form-item">
-                <button class="layui-btn" lay-filter="*" lay-submit="">立即发布</button>
               </div>
             </form>
           </div>
@@ -102,17 +80,39 @@
 @endsection()
 @section('js')
     <script>
-    layui.config({
-		base: '/theme/' //静态资源所在路径
-	}).extend({
-		index: 'lib/index' //主入口模块
-	}).use(['index', 'form'], function () {
-		var form = layui.form
-			, index = parent.layer.getFrameIndex(window.name); //获取窗口索引
-        @if(Session::has('message'))
-		parent.window.location.reload();
-		parent.layer.close(index);
-        @endif
-	});
+		var ue = UE.getEditor('container', {
+			toolbars: [
+				['bold',
+                    'italic', 'underline', 'strikethrough', 'blockquote', 'insertunorderedlist',
+					'insertorderedlist', 'justifyleft', 'justifycenter', 'justifyright', 'link', 'insertimage','emotion', //表情
+					'spechars',  'source', //源代码
+					'fullscreen'
+				]
+			],
+			elementPathEnabled: false,
+			enableContextMenu: false,
+			autoClearEmptyNode: true,
+			wordCount: false,
+			imagePopup: false,
+			autoHeightEnabled: true,
+			zIndex:2,
+			initialFrameHeight: 400,
+			autotypeset: {indent: true, imageBlockLine: 'center'}
+		});
+		ue.ready(function () {
+			ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
+		});
+		layui.config({
+			base: '/theme/' //静态资源所在路径
+		}).extend({
+			index: 'lib/index' //主入口模块
+		}).use(['index', 'form'], function () {
+			var form = layui.form
+				, index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+            @if(Session::has('message'))
+			parent.window.location.reload();
+			parent.layer.close(index);
+            @endif
+		});
 </script>
 @endsection()
