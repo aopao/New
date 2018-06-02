@@ -84,6 +84,19 @@ class ArticleController extends ApiController
     }
 
     /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function edit($id)
+    {
+        $article_info = $this->articleServices->getById($id);
+        $category_list = $this->categoryServices->getSingleTreeArray();
+        $copy_from_list = $this->copyFromServices->getAll();
+
+        return view('admin.article.edit', compact('article_info', 'category_list', 'copy_from_list'));
+    }
+
+    /**
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\JsonResponse
      */
@@ -93,5 +106,19 @@ class ArticleController extends ApiController
         $data = $this->articleServices->upload($request);
 
         return $this->responseSuccess($data);
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function destroy($id)
+    {
+        $res = $this->articleServices->destroy($id);
+        if ($res) {
+            return $this->setStatusCode(200)->responseSuccess();
+        } else {
+            return $this->setStatusCode(401)->responseErrors();
+        }
     }
 }

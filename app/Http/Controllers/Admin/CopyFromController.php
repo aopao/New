@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\CopyFromRequest;
-use App\Repositories\CopyFromRepository;
-use App\Services\ArticleServices;
+use App\Services\CopyFromServices;
 
 class CopyFromController extends ApiController
 {
@@ -16,9 +15,9 @@ class CopyFromController extends ApiController
     /**
      * CopyFromController constructor.
      *
-     * @param ArticleServices $copyFromServices
+     * @param CopyFromServices $copyFromServices
      */
-    public function __construct(ArticleServices $copyFromServices)
+    public function __construct(CopyFromServices $copyFromServices)
     {
         parent::__construct();
         $this->copyFromServices = $copyFromServices;

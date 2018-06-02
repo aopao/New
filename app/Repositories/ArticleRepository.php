@@ -14,16 +14,16 @@ class ArticleRepository
     /**
      * @var \App\Models\Article
      */
-    private $articel;
+    private $article;
 
     /**
      * ArticleRepository constructor.
      *
-     * @param \App\Models\Article $articel
+     * @param \App\Models\Article $article
      */
-    public function __construct(Article $articel)
+    public function __construct(Article $article)
     {
-        $this->articel = $articel;
+        $this->article = $article;
     }
 
     /**
@@ -31,17 +31,17 @@ class ArticleRepository
      */
     public function getAll()
     {
-        return $this->articel->all();
+        return $this->article->all();
     }
 
     public function getAllCount()
     {
-        return $this->articel->count();
+        return $this->article->count();
     }
 
     public function getAllByPage($offset, $limit)
     {
-        return $this->articel->skip($offset)->limit($limit)->orderBy('created_at', 'desc')->get();
+        return $this->article->with('category', 'copyFrom')->skip($offset)->limit($limit)->orderBy('created_at', 'desc')->get();
     }
 
     /**
@@ -50,7 +50,7 @@ class ArticleRepository
      */
     public function getById($id)
     {
-        return $this->articel->find($id);
+        return $this->article->find($id);
     }
 
     /**
@@ -59,7 +59,7 @@ class ArticleRepository
      */
     public function store(array $data)
     {
-        return $this->articel->create($data);
+        return $this->article->create($data);
     }
 
     /**
@@ -69,7 +69,7 @@ class ArticleRepository
      */
     public function update($id, $data)
     {
-        return $this->articel->where('id', $id)->update($data);
+        return $this->article->where('id', $id)->update($data);
     }
 
     /**
@@ -78,6 +78,6 @@ class ArticleRepository
      */
     public function destroy($id)
     {
-        return $this->articel->destroy($id);
+        return $this->article->destroy($id);
     }
 }

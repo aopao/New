@@ -11,6 +11,7 @@ return [
     'article_add' => '添加文章',
     'article_edit' => '修改文章',
     'article_delete' => '删除文章',
+    'article_index'=>'返回文章列表',
     'title' => '文章标题',
     'desc' => '文章简介',
     'parent_id' => '文章层级',

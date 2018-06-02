@@ -1,4 +1,12 @@
 @extends('admin.layouts.iframe_layout')
+@section('css')
+    <style>
+        .layui-table-cell {
+            height: 50px;
+            line-height: 50px;
+        }
+    </style>
+@endsection
 @section('content')
     <div class="layui-fluid">
         <div class="layui-row layui-col-space15">
@@ -10,7 +18,49 @@
                             <a class="layui-btn layui-btn-normal" href="{{ route('admin.article.create') }}"><i
                                         class="layui-icon">&#xe61f;</i>@lang('article.article_add')</a>
                         </div>
-                        <table class="layui-hide" id="articleList" lay-filter="articleList"></table>
+                        <div class="pagenormal">
+                            <table class="layui-hide" id="articleList" lay-filter="articleList"></table>
+                        </div>
+                        <script type="text/html" id="ThumbTpl">
+                            @{{# if (d.thumb){ }}
+                            <img style="display: inline-block; height: 50px" src="@{{d.thumb}}">
+                            @{{# }else{ }}
+                            <img style="display: inline-block; height: 50px"
+                                 src="http://d.lanrentuku.com/down/png/1702/50food-and-restaurant/waitress.png">
+                            @{{# } }}
+                        </script>
+                        <script type="text/html" id="HttpUrlTpl">
+                            @{{# if (d.http_url){ }}
+                            <span class="layui-badge layui-bg-orange">站外文章</span>
+                            @{{# }else{ }}
+                            <span class="layui-badge layui-bg-blue">站内文章</span>
+                            @{{# } }}
+                        </script>
+                        <script type="text/html" id="IsTopTpl">
+                            @{{# if (d.is_top==0){ }}
+                            <span class="layui-badge layui-bg-orange">普通</span>
+                            @{{# }else if (d.is_top==1){ }}
+                            <span class="layui-badge layui-bg-blue">本版</span>
+                            @{{# }else{ }}
+                            <span class="layui-badge">全局</span>
+                            @{{# } }}
+                        </script>
+                        <script type="text/html" id="IsRemarkTpl">
+                            @{{# if (d.is_remark==0){ }}
+                            <span class="layui-badge layui-bg-orange">普通</span>
+                            @{{# }else{ }}
+                            <span class="layui-badge">置顶</span>
+                            @{{# } }}
+                        </script>
+                        <script type="text/html" id="StatusTpl">
+                            @{{# if (d.status==0){ }}
+                            <span class="layui-badge layui-bg-orange">未发布</span>
+                            @{{# }else if (d.status==1){ }}
+                            <span class="layui-badge layui-bg-blue">已发布</span>
+                            @{{# }else{ }}
+                            <span class="layui-badge">待审核</span>
+                            @{{# } }}
+                        </script>
                         <script type="text/html" id="categorListOperate">
                             <button class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit">编辑</button>
                             <button class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</button>
@@ -29,21 +79,34 @@
             base: '/theme/' //静态资源所在路径
         }).extend({
             index: 'lib/index' //主入口模块
-        }).use(['index', 'table'], function () {
+        }).use(['index', 'table', 'laytpl'], function () {
             var $ = layui.$
                 , admin = layui.admin
-                , table = layui.table;
+                , table = layui.table
 
             table.render({
                 elem: '#articleList'
                 , url: ArticleListUrl
                 , cellMinWidth: 80
                 , page: true
+                , limit: 30
                 , cols: [[
-                    {field: 'id', title: 'ID', width: 100, fixed: true}
-                    , {field: 'title', title: '分类名称'}
-                    , {field: 'category_id', title: '分类简介'}
-                    , {field: 'created_at', title: ' 创建时间', sort: true}
+                    {field: 'id', title: 'ID', width: 50, fixed: true}
+                    , {field: 'thumb', title: '缩略图', width: 80, templet: '#ThumbTpl', align: 'center'}
+                    , {field: 'title', title: '标题', width: 350}
+                    , {
+                        field: 'category_id',
+                        title: '分类',
+                        width: 100,
+                        templet: '<div>@{{d.category.name}}</div>',
+                        align: 'center'
+                    }
+                    , {field: 'http_url', title: '类型', templet: '#HttpUrlTpl', align: 'center'}
+                    , {field: 'is_top', title: '置顶', align: 'center', templet: '#IsTopTpl'}
+                    , {field: 'is_remark', title: '推荐', align: 'center', templet: '#IsRemarkTpl'}
+                    , {field: 'status', title: '状态', align: 'center', templet: '#StatusTpl'}
+                    , {field: 'views', title: '查看', align: 'center'}
+                    , {field: 'created_at', title: ' 创建时间', sort: true, align: 'center', width: 200}
                     , {align: 'center', title: '操作', fixed: 'right', toolbar: '#categorListOperate'}
                 ]]
             });
@@ -59,13 +122,9 @@
                 let layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
                 let data = obj.data;
                 if (layEvent === 'edit') { //编辑
-                    layer.open({
-                        type: 2
-                        , content: ArticleIndexUrl + '/' + data.id + '/edit'
-                        , shadeClose: true
-                        , area: admin.screen() < 2 ? ['100%', '80%'] : ['50%', '355px']
-                        , maxmin: true
-                    });
+                    let EditUrl = ArticleIndexUrl + '/' + data.id + '/edit';
+                    window.location.href = EditUrl;
+
                 } else if (layEvent === 'del') { //删除
                     layer.confirm('真的删除么?', function (index) {
                         layer.close(index);

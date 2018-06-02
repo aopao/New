@@ -5,7 +5,8 @@
             <div class="layui-form layui-form-pane">
                 <div class="layui-card" style="height: 1500px;">
                     <div class="layui-card-header">
-                        <a class="layui-btn layui-btn-normal layui-btn-radius layui-btn-sm" href="{{ route('admin.article.index') }}">@lang('article.article_index')</a>
+                        <a class="layui-btn layui-btn-normal layui-btn-radius layui-btn-sm"
+                           href="{{ route('admin.article.update',['id'=>$article_info['id']]) }}">@lang('article.article_edit')</a>
                         @lang('article.article_add')
                     </div>
                     <div class="layui-card-body" pad15="2">
