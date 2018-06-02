@@ -63,7 +63,7 @@
                             </div>
                             <div class="layui-form-item">
                                 {{ csrf_field() }}
-                                <button class="layui-btn" lay-submit="">@lang('config.submit')</button>
+                                <button class="layui-btn layui-btn-normal" lay-submit=""><i class="layui-icon">&#xe609;</i> @lang('config.submit')</button>
                             </div>
                         </form>
                     </div>

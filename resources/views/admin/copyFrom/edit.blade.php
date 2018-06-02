@@ -4,37 +4,31 @@
         <div class="layui-row layui-col-space15">
             <div class="layui-col-md12">
                 <div class="layui-card">
-                    <div class="layui-card-header">@lang('category.category_add')</div>
+                    <div class="layui-card-header">@lang('copyFrom.copy_from_add')</div>
                     <div class="layui-card-body" pad15="2">
-                        <form action="{{ route('admin.category.store') }}" method="post"
+                        <form action="{{ route('admin.copy_from.update',['id'=>$copy_from_info['id']]) }}" method="post"
                               class="layui-form layui-form-pane">
                             <div class="layui-form-item">
-                                <label class="layui-form-label">@lang('category.parent_id')</label>
-                                <div class="layui-input-block">
-                                    @inject("CategoryList","\App\Presenters\CategoryListPresenter")
-                                    <select name="parent_id" lay-verify="required">
-                                        <option value="0">@lang('category.top')</option>
-                                        {!! $CategoryList->getSelectHtml($category_list) !!}
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <label class="layui-form-label">@lang('category.name')</label>
+                                <label class="layui-form-label">@lang('copyFrom.name')</label>
                                 <div class="layui-input-block">
                                     <input autocomplete="off" class="layui-input" lay-verify="required" name="name"
-                                           value="" placeholder="@lang('category.name')" type="text"/>
+                                           value="{{ $copy_from_info['name'] }}" placeholder="@lang('copyFrom.name')"
+                                           type="text"/>
                                 </div>
                             </div>
                             <div class="layui-form-item">
-                                <label class="layui-form-label">@lang('category.desc')</label>
+                                <label class="layui-form-label">@lang('copyFrom.desc')</label>
                                 <div class="layui-input-block">
-                                    <input autocomplete="off" class="layui-input" name="desc" value=""
-                                           placeholder="@lang('category.desc')" type="text"/>
+                                    <input autocomplete="off" class="layui-input" name="desc"
+                                           value="{{ $copy_from_info['desc'] }}"
+                                           placeholder="@lang('copyFrom.desc')" type="text"/>
                                 </div>
                             </div>
                             <div class="layui-form-item" style="text-align: center">
                                 {{ csrf_field() }}
-                                <button class="layui-btn layui-btn-normal" lay-submit=""><i class="layui-icon">&#xe609;</i> @lang('category.submit')</button>
+                                {{method_field('PUT')}}
+                                <input type="hidden" name="id" value="{{ $copy_from_info['id'] }}">
+                                <button class="layui-btn layui-btn-normal" lay-submit=""><i class="layui-icon">&#xe609;</i> @lang('copyFrom.edit')</button>
                             </div>
                         </form>
                     </div>

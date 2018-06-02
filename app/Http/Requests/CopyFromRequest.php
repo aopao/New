@@ -4,12 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-/**
- * Class CategoryRequest
- *
- * @package App\Http\Requests
- */
-class CategoryRequest extends FormRequest
+class CopyFromRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -39,7 +34,7 @@ class CategoryRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => '分类名称必须填写',
+            'name.required' => '来源名称必须填写',
         ];
     }
 }

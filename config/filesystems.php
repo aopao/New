@@ -43,6 +43,21 @@ return [
 
     'disks' => [
 
+        'article_upload' => [
+            'driver' => 'local',
+            'root' => storage_path('app/upload/article'),
+        ],
+
+        'banner_upload' => [
+            'driver' => 'local',
+            'root' => storage_path('app/upload/banner'),
+        ],
+
+        'other_upload' => [
+            'driver' => 'local',
+            'root' => storage_path('app/upload/other'),
+        ],
+
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),

@@ -79,4 +79,20 @@ class ApiController extends BaseController
             'data' => $data,
         ]);
     }
+
+    /**
+     * @param        $data
+     * @param int $count
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function responsePage($count = 0, $data = [])
+    {
+        return $this->response([
+            'code' => 0,
+            'status_code' => $this->statusCode,
+            'msg' => '',
+            'count' => $count,
+            'data' => $data,
+        ]);
+    }
 }

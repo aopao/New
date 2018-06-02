@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class LinkRequest extends FormRequest
+class FriendLinkRequest extends FormRequest
 {
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -25,7 +25,6 @@ class LinkRequest extends FormRequest
 	{
 		return [
 			'url' => 'required|url' ,
-
 		];
 	}
 	
@@ -34,7 +33,6 @@ class LinkRequest extends FormRequest
 		return [
 			'url.required' => '友情链接必须填写' ,
 			'url.url' => '输入的友情链接地址不合法',
-
 		];
 	}
 	

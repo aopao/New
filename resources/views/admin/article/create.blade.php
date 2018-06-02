@@ -3,113 +3,132 @@
     <div class="layui-fluid">
         <div class="fly-panel" pad20="" style="padding-top: 5px;">
             <div class="layui-form layui-form-pane">
-                <div class="layui-card" style="height: 1000px;">
-                    <div class="layui-card-header">@lang('category.category_add')</div>
+                <div class="layui-card" style="height: 1500px;">
+                    <div class="layui-card-header">@lang('article.article_add')</div>
                     <div class="layui-card-body" pad15="2">
                         <div class="layui-tab layui-tab-brief" lay-filter="user">
                             <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
                                 <div class="layui-tab-item layui-show">
-                                    <form action="" method="post">
-                                        <div class="layui-row layui-col-space15 layui-form-item">
-                                            <div class="layui-col-md3">
-                                                <label class="layui-form-label">所在专栏</label>
-                                                <div class="layui-input-block">
-                                                    <select lay-verify="required" name="class" lay-filter="column">
-                                                        <option></option>
-                                                        <option value="0">提问</option>
-                                                        <option value="99">分享</option>
-                                                        <option value="100">讨论</option>
-                                                        <option value="101">建议</option>
-                                                        <option value="168">公告</option>
-                                                        <option value="169">动态</option>
-                                                    </select>
-                                                    <div class="layui-unselect layui-form-select">
-                                                        <div class="layui-select-title"><input type="text"
-                                                                                               placeholder="请选择"
-                                                                                               value="" readonly=""
-                                                                                               class="layui-input layui-unselect"><i
-                                                                    class="layui-edge"></i></div>
-                                                        <dl class="layui-anim layui-anim-upbit" style="">
-                                                            <dd lay-value="" class="layui-select-tips">请选择</dd>
-                                                            <dd lay-value="0" class="">提问</dd>
-                                                            <dd lay-value="99" class="">分享</dd>
-                                                            <dd lay-value="100" class="layui-this">讨论</dd>
-                                                            <dd lay-value="101" class="">建议</dd>
-                                                            <dd
-                                                                    lay-value="168" class="">公告
-                                                            </dd>
-                                                            <dd lay-value="169" class="">动态</dd>
-                                                        </dl>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="layui-col-md9">
-                                                <label for="L_title" class="layui-form-label">标题</label>
-                                                <div class="layui-input-block">
-                                                    <input type="text" id="L_title" name="title" required=""
-                                                           lay-verify="required" autocomplete="off" class="layui-input">
-                                                </div>
+                                    <form class="layui-form layui-form-pane"
+                                          action="{{ route('admin.article.store') }}" method="post">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label"
+                                                   for="CategoryId">@lang('article.category_id')</label>
+                                            <div class="layui-input-inline">
+                                                @inject("CategoryList","\App\Presenters\CategoryListPresenter")
+                                                <select name="category_id" id="CategoryId" lay-verify="required">
+                                                    <option value="0"
+                                                            disabled="disabled">@lang('article.category')</option>
+                                                    {!! $CategoryList->getSelectHtml($category_list) !!}
+                                                </select>
                                             </div>
                                         </div>
-                                        <div class="layui-row layui-col-space15 layui-form-item layui-hide"
-                                             id="LAY_quiz">
-                                            <div class="layui-col-md3">
-                                                <label class="layui-form-label">所属产品</label>
-                                                <div class="layui-input-block">
-                                                    <select name="project">
-                                                        <option></option>
-                                                        <option value="layui">layui</option>
-                                                        <option value="独立版layer">独立版layer</option>
-                                                        <option value="独立版layDate">独立版layDate</option>
-                                                        <option value="LayIM">LayIM</option>
-                                                        <option value="Fly社区模板">Fly社区模板</option>
-                                                    </select>
-                                                    <div class="layui-unselect layui-form-select">
-                                                        <div class="layui-select-title"><input type="text"
-                                                                                               placeholder="请选择"
-                                                                                               value="" readonly=""
-                                                                                               class="layui-input layui-unselect"><i
-                                                                    class="layui-edge"></i></div>
-                                                        <dl class="layui-anim layui-anim-upbit">
-                                                            <dd lay-value="" class="layui-select-tips">请选择</dd>
-                                                            <dd lay-value="layui" class="">layui</dd>
-                                                            <dd lay-value="独立版layer" class="">独立版layer</dd>
-                                                            <dd lay-value="独立版layDate" class="">独立版layDate</dd>
-                                                            <dd lay-value="LayIM"
-                                                                class="">LayIM
-                                                            </dd>
-                                                            <dd
-                                                                    lay-value="Fly社区模板" class="">Fly社区模板
-                                                            </dd>
-                                                        </dl>
-                                                    </div>
-                                                </div>
+
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label" for="Thumb">@lang('article.thumb')</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" id="ThumbUrl" name="thumb" autocomplete="off"
+                                                       class="layui-input"/>
                                             </div>
-                                            <div class="layui-col-md3">
-                                                <label class="layui-form-label" for="L_version">版本号</label>
-                                                <div class="layui-input-block">
-                                                    <input type="text" id="L_version" value="" name="version"
-                                                           autocomplete="off" class="layui-input">
-                                                </div>
-                                            </div>
-                                            <div class="layui-col-md6">
-                                                <label class="layui-form-label" for="L_browser">浏览器</label>
-                                                <div class="layui-input-block">
-                                                    <input type="text" id="L_browser" value="" name="browser"
-                                                           placeholder="浏览器名称及版本，如：IE 11" autocomplete="off"
-                                                           class="layui-input">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="layui-form-item" style="height: 200px">
-                                            <!-- 编辑器容器 -->
-                                            <script id="container" name="content" type="text/plain"></script>
-                                            <button class="layui-btn" style="margin-top: 15px;" lay-filter="*"
-                                                    lay-submit="">立即发布
+                                            <button type="button" class="layui-btn layui-btn-primary"
+                                                    style="width: 190px; border-color: #e6e6e6;" id="UploadThumb">
+                                                <i class="layui-icon">&#xe60d; </i>@lang('article.thumb')
                                             </button>
+                                            <button type="button" class="layui-btn layui-btn-primary"
+                                                    style="width: 190px; border-color: #e6e6e6;" id="ViewThumb">
+                                                <i class="layui-icon">&#xe60d; </i>@lang('article.view_thumb')
+                                            </button>
+                                            <div id="ThumbHtml" style="display: none">
+                                                <img src="" id="ThumbHtmlUrl" alt="">
+                                            </div>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="ThumbTips"
+                                                                                      style="display: none;color: #00a2d4"></span>
                                         </div>
                                         <div class="layui-form-item">
+                                            <label class="layui-form-label" for="Title">@lang('article.title')</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" id="Title" name="title" required=""
+                                                       lay-verify="required" autocomplete="off" class="layui-input">
+                                            </div>
                                         </div>
+
+                                        <div class="layui-form-item" pane="">
+                                            <label class="layui-form-label">@lang('article.copy_from')</label>
+                                            <div class="layui-input-block">
+                                                @inject("CopyFromList","\App\Presenters\CopyFromListPresenter")
+                                                {!! $CopyFromList->getRadioHtml($copy_from_list) !!}
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item" pane="">
+                                            <label class="layui-form-label">@lang('article.is_http_url')</label>
+                                            <div class="layui-input-block">
+                                                <input type="radio" name="is_http_url" lay-filter="is_http_url"
+                                                       value="0"
+                                                       title="@lang('article.is_http_url.no')" checked="">
+                                                <input type="radio" name="is_http_url" value="1"
+                                                       lay-filter="is_http_url"
+                                                       title="@lang('article.is_http_url.yes')">
+                                            </div>
+                                        </div>
+
+                                        <div class="layui-form-item" id="HttpUrl" style="display: none;">
+                                            <label class="layui-form-label"
+                                                   for="HttpUrl">@lang('article.http_url')</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" id="HttpUrl" name="http_url" autocomplete="off"
+                                                       class="layui-input"
+                                                       placeholder="@lang('article.is_http_url_tips')">
+                                            </div>
+                                        </div>
+
+                                        <div class="layui-form-item layui-form-text" id="excerpt">
+                                            <label class="layui-form-label">@lang('article.excerpt')</label>
+                                            <div class="layui-input-block">
+                                                <textarea placeholder="@lang('article.excerpt')" name="excerpt"
+                                                          class="layui-textarea"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item layui-form-text" id="content">
+                                            <label class="layui-form-label">@lang('article.content')</label>
+                                            <div class="layui-input-block">
+                                                <script id="container" type="text/plain"></script>
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item" pane="">
+                                            <label class="layui-form-label">@lang('article.is_top')</label>
+                                            <div class="layui-input-block">
+                                                <input type="radio" name="is_top" value="0"
+                                                       title="@lang('article.is_top.no')" checked="">
+                                                <input type="radio" name="is_top" value="1"
+                                                       title="@lang('article.is_top.single')">
+                                                <input type="radio" name="is_top" value="2"
+                                                       title="@lang('article.is_top.global')">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item" pane="">
+                                            <label class="layui-form-label">@lang('article.is_remark')</label>
+                                            <div class="layui-input-block">
+                                                <input type="radio" name="is_remark" value="0"
+                                                       title="@lang('article.is_remark.no')" checked="">
+                                                <input type="radio" name="is_remark" value="1"
+                                                       title="@lang('article.is_remark.yes')">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item" pane="">
+                                            <label class="layui-form-label">@lang('article.status')</label>
+                                            <div class="layui-input-block">
+                                                <input type="radio" name="status" value="0"
+                                                       title="@lang('article.status.publish')" checked="">
+                                                <input type="radio" name="status" value="1"
+                                                       title="@lang('article.status.draft')">
+                                            </div>
+                                        </div>
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                        <button class="layui-btn layui-btn-normal" style="margin-top: 15px;"
+                                                lay-submit=""><i
+                                                    class="layui-icon">&#xe609;</i> @lang('article.article_add')
+                                        </button>
                                     </form>
                                 </div>
                             </div>
@@ -148,13 +167,59 @@
             base: '/theme/' //静态资源所在路径
         }).extend({
             index: 'lib/index' //主入口模块
-        }).use(['index', 'form'], function () {
+        }).use(['index', 'form', 'upload'], function () {
             var form = layui.form
+                , $ = layui.jquery
+                , upload = layui.upload
                 , index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+
+            form.on('radio(is_http_url)', function (data) {
+                if (data.value == 1) {
+                    $('#excerpt').hide()
+                    $('#content').hide()
+                    $('#HttpUrl').show()
+                } else {
+                    $('#excerpt').show()
+                    $('#content').show()
+                    $('#HttpUrl').hide()
+                }
+            });
+            $('#ViewThumb').click(function () {
+                if ($('#ThumbHtmlUrl').attr('src') != '') {
+                    layer.open({
+                        type: 1,
+                        shade: false,
+                        offset: '200px',
+                        title: false, //不显示标题
+                        content: $('#ThumbHtml'),
+                    });
+                }
+            })
+
+            upload.render({
+                elem: '#UploadThumb' //绑定元素
+                , accept: 'images'
+                , data: {_token: '{{ csrf_token() }}'}
+                , url: '{{ route('admin.article..thumb.upload') }}' //上传接口
+                , done: function (res) {
+                    if (res.status_code === 200) {
+                        $('#ThumbUrl').val(res.data.image_url);
+                        $('#ThumbHtmlUrl').attr('src', res.data.image_url);
+                        $('#ThumbTips').html('缩略图上传成功').show()
+                    }
+                }
+                , error: function () {
+                    layer.msg('上传失败!', {offset: '100px', icon: 4, time: 2000});
+                }
+            });
+
             @if(Session::has('message'))
+            layer.msg('{{Session::get("message")}}', {offset: '100px', icon: 1, time: 2000});
             parent.window.location.reload();
             parent.layer.close(index);
             @endif
+
+
         });
     </script>
 @endsection()

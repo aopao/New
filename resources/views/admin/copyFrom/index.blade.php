@@ -4,14 +4,14 @@
         <div class="layui-row layui-col-space15">
             <div class="layui-col-md12">
                 <div class="layui-card">
-                    <div class="layui-card-header">@lang('category.category_list')</div>
+                    <div class="layui-card-header">@lang('copyFrom.copy_from_list')</div>
                     <div class="layui-card-body">
                         <div class="test-table-reload-btn" style="margin-bottom: 10px;">
                             <button class="layui-btn layui-btn-normal"
-                                    data-type="category_add"><i class="layui-icon">&#xe61f;</i>@lang('category.category_add')</button>
+                                    data-type="category_add"><i class="layui-icon">&#xe61f;</i>@lang('copyFrom.copy_from_add')</button>
                         </div>
-                        <table class="layui-hide" id="categorList" lay-filter="categorList"></table>
-                        <script type="text/html" id="categorListOperate">
+                        <table class="layui-hide" id="copyFromList" lay-filter="copyFromList"></table>
+                        <script type="text/html" id="copyFromListOperate">
                             <button class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit">编辑</button>
                             <button class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</button>
                         </script>
@@ -23,8 +23,8 @@
 @endsection()
 @section('js')
     <script>
-        let CategoryIndexUrl = '{{ route('admin.category.index') }}';
-        let CategoryListUrl = '{{ route('admin.category.list') }}';
+        let CopyFromIndexUrl = '{{ route('admin.copy_from.index') }}';
+        let CopyFromListUrl = '{{ route('admin.copy_from.list') }}';
         layui.config({
             base: '/theme/' //静态资源所在路径
         }).extend({
@@ -35,16 +35,16 @@
                 , table = layui.table;
 
             table.render({
-                elem: '#categorList'
+                elem: '#copyFromList'
                 , height: 'full-20'
-                , url: CategoryListUrl
+                , url: CopyFromListUrl
                 , cellMinWidth: 80
                 , cols: [[
                     {field: 'id', title: 'ID', width: 100, fixed: true}
-                    , {field: 'name', title: '分类名称'}
-                    , {field: 'desc', title: '分类简介'}
+                    , {field: 'name', title: '来源名称'}
+                    , {field: 'desc', title: '来源简介'}
                     , {field: 'created_at', title: ' 创建时间', sort: true}
-                    , {align: 'center', title: '操作', fixed: 'right', toolbar: '#categorListOperate'}
+                    , {align: 'center', title: '操作', fixed: 'right', toolbar: '#copyFromListOperate'}
                 ]]
             });
 
@@ -52,9 +52,9 @@
                 category_add: function () {
                     layer.open({
                         type: 2
-                        , content: '{{ route('admin.category.create') }}'
+                        , content: '{{ route('admin.copy_from.create') }}'
                         , shadeClose: true
-                        , area: admin.screen() < 2 ? ['100%', '80%'] : ['50%', '355px']
+                        , area: admin.screen() < 2 ? ['100%', '80%'] : ['50%', '300px']
                         , maxmin: true
                     });
                 },
@@ -67,15 +67,15 @@
 
             //监听工具条
             //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
-            table.on('tool(categorList)', function (obj) {
+            table.on('tool(copyFromList)', function (obj) {
                 let layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
                 let data = obj.data;
                 if (layEvent === 'edit') { //编辑
                     layer.open({
                         type: 2
-                        , content: CategoryIndexUrl + '/' + data.id + '/edit'
+                        , content: CopyFromIndexUrl + '/' + data.id + '/edit'
                         , shadeClose: true
-                        , area: admin.screen() < 2 ? ['100%', '80%'] : ['50%', '355px']
+                        , area: admin.screen() < 2 ? ['100%', '80%'] : ['50%', '300px']
                         , maxmin: true
                     });
                 } else if (layEvent === 'del') { //删除
@@ -88,7 +88,7 @@
                             }
                         });
                         $.ajax({
-                            url: CategoryIndexUrl + '/' + data.id,
+                            url: CopyFromIndexUrl + '/' + data.id,
                             type: "DELETE",
                             data: {"id": data.id},
                             dataType: "json",

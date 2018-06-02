@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class CopyFrom extends Model
 {
-    //
+    protected $fillable = ['name', 'desc'];
 }

@@ -38,7 +38,7 @@
                                 {{ csrf_field() }}
                                 {{method_field('PUT')}}
                                 <input type="hidden" name="id" value="{{ $category_info['id'] }}">
-                                <button class="layui-btn" lay-submit="">@lang('category.edit')</button>
+                                <button class="layui-btn layui-btn-normal" lay-submit=""><i class="layui-icon">&#xe609;</i> @lang('category.edit')</button>
                             </div>
                         </form>
                     </div>

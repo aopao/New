@@ -5,11 +5,11 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * Class CategoryRequest
+ * Class ArticleRequest
  *
  * @package App\Http\Requests
  */
-class CategoryRequest extends FormRequest
+class ArticleRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,7 +29,7 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'title' => 'required',
         ];
     }
 
@@ -39,7 +39,7 @@ class CategoryRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => '分类名称必须填写',
+            'title.required' => '分类名称必须填写',
         ];
     }
 }

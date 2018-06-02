@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\LinkRequest;
+use App\Http\Requests\FriendLinkRequest;
 use App\Services\FriendLinkServices;
 
 /**
@@ -15,18 +15,18 @@ class FriendLinkController extends ApiController
     /**
      * @var FriendLinkServices
      */
-    private $linkServices;
+    private $friendLinkServices;
 
     /**
      * FriendLinkController constructor.
      *
      * @param int $statusCode
-     * @param FriendLinkServices $linkServices
+     * @param FriendLinkServices $friendLinkServices
      */
-    public function __construct(int $statusCode = 200, FriendLinkServices $linkServices)
+    public function __construct(int $statusCode = 200, FriendLinkServices $friendLinkServices)
     {
         parent::__construct($statusCode);
-        $this->linkServices = $linkServices;
+        $this->friendLinkServices = $friendLinkServices;
     }
 
     /**
@@ -34,18 +34,18 @@ class FriendLinkController extends ApiController
      */
     public function index()
     {
-        $linkInfo = $this->linkServices->getAll();
+        $linkInfo = $this->friendLinkServices->getAll();
 
-        return view('admin.link.index', compact('linkInfo'));
+        return view('admin.friendLink.index', compact('linkInfo'));
     }
 
     /**
-     * @param LinkRequest $linkRequest
+     * @param FriendLinkRequest $friendLinkRequest
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(LinkRequest $linkRequest)
+    public function update(FriendLinkRequest $friendLinkRequest)
     {
-        if ($this->linkServices->update($linkRequest->all())) {
+        if ($this->friendLinkServices->update($friendLinkRequest->all())) {
             return redirect()->back()->with("message", "修改成功");
         } else {
             return redirect()->back()->with("message", "修改失败");

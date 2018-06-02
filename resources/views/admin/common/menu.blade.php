@@ -24,7 +24,7 @@
                 </a>
                 <dl class="layui-nav-child">
                     <dd>
-                        <a lay-href="{{ route('admin.article.create') }}">添加文章</a>
+                        <a lay-href="{{ route('admin.article.index') }}">文章管理</a>
                     </dd>
                 </dl>
                 <dl class="layui-nav-child">
@@ -34,7 +34,7 @@
                 </dl>
                 <dl class="layui-nav-child">
                     <dd>
-                        <a lay-href="{{ route('admin.category.index') }}">来源管理</a>
+                        <a lay-href="{{ route('admin.copy_from.index') }}">来源管理</a>
                     </dd>
                 </dl>
             </li>

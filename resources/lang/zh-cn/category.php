@@ -16,6 +16,6 @@ return [
 	'parent_id' => '分类层级' ,
 	'search' => '搜索' ,
 	'submit' => '添加' ,
-	'edit' => '修改' ,
+    'edit'=>'提交修改',
 	'top' => '根目录',
 ];

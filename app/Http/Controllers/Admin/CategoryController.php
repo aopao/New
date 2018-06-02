@@ -24,6 +24,7 @@ class CategoryController extends ApiController
      */
     public function __construct(CategoryServices $categoryServices)
     {
+        parent::__construct();
         $this->categoryServices = $categoryServices;
     }
 
@@ -38,7 +39,7 @@ class CategoryController extends ApiController
     /**
      * @return \Illuminate\Http\JsonResponse
      */
-    public function list()
+    public function categoryList()
     {
         $category_list = $this->categoryServices->getSingleListTreeArray();
 
