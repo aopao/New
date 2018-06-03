@@ -19,7 +19,7 @@ class CreateFriendLinksTable extends Migration
 			$table->string('pic')->nullable()->comment('友情链接图片地址');
 			$table->string('url')->comment('友情链接地址');
 			$table->string('type')->default(1)->comment('友情链接类型区分0:图片,1:文字');
-			$table->string('seat')->comment('友情链接展示位置');
+			$table->string('seat')->nullable()->comment('友情链接展示位置');
 			$table->string('expire_date')->default(0)->comment('到期时间,默认为零,长期有效');
 			$table->string('status')->default(1)->comment('友情链接当前的状态0:关闭显示,1:显示');
 			$table->timestamps();
