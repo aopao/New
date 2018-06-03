@@ -37,5 +37,8 @@ Route::namespace('Admin')->prefix(PREFIX)->middleware('auth')->group(function ()
     Route::resource('article', 'ArticleController', ['as' => 'admin']);
 
     ##友情链接路由##
-    Route::resource('link', 'FriendLinkController', ['as' => 'admin']);
+    Route::get('friendLink/friendLinklist' , 'FriendLinkController@friendLinklist')->name('admin.friendLink.friendLinklist');
+    Route::resource('friendLink' , 'FriendLinkController' , [ 'as' => 'admin' ]);
+    Route::post('api/upload' , 'FriendLinkController@upload')->name('admin.friendLink.upload');
+
 });
