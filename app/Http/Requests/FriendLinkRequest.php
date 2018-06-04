@@ -24,15 +24,14 @@ class FriendLinkRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			'url' => 'required|url' ,
+
 		];
 	}
 	
 	public function messages()
 	{
 		return [
-			'url.required' => '友情链接必须填写' ,
-			'url.url' => '输入的友情链接地址不合法',
+
 		];
 	}
 	
