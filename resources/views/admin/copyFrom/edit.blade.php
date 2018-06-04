@@ -6,30 +6,29 @@
                 <div class="layui-card">
                     <div class="layui-card-header">@lang('copyFrom.copy_from_add')</div>
                     <div class="layui-card-body" pad15="2">
-                        <form action="{{ route('admin.copy_from.update',['id'=>$copy_from_info['id']]) }}" method="post"
-                              class="layui-form layui-form-pane">
+                        <form action="{{ route('admin.copy_from.update',['id'=>$copy_from_info['id']]) }}" method="post" class="layui-form layui-form-pane">
+                           
                             <div class="layui-form-item">
                                 <label class="layui-form-label">@lang('copyFrom.name')</label>
                                 <div class="layui-input-block">
-                                    <input autocomplete="off" class="layui-input" lay-verify="required" name="name"
-                                           value="{{ $copy_from_info['name'] }}" placeholder="@lang('copyFrom.name')"
-                                           type="text"/>
+                                    <input autocomplete="off" class="layui-input" lay-verify="required" name="name" value="{{ $copy_from_info['name'] }}" placeholder="@lang('copyFrom.name')" type="text"/>
                                 </div>
                             </div>
+                            
                             <div class="layui-form-item">
                                 <label class="layui-form-label">@lang('copyFrom.desc')</label>
                                 <div class="layui-input-block">
-                                    <input autocomplete="off" class="layui-input" name="desc"
-                                           value="{{ $copy_from_info['desc'] }}"
-                                           placeholder="@lang('copyFrom.desc')" type="text"/>
+                                    <input autocomplete="off" class="layui-input" name="desc" value="{{ $copy_from_info['desc'] }}" placeholder="@lang('copyFrom.desc')" type="text"/>
                                 </div>
                             </div>
+                            
                             <div class="layui-form-item" style="text-align: center">
                                 {{ csrf_field() }}
                                 {{method_field('PUT')}}
                                 <input type="hidden" name="id" value="{{ $copy_from_info['id'] }}">
                                 <button class="layui-btn layui-btn-normal" lay-submit=""><i class="layui-icon">&#xe609;</i> @lang('copyFrom.edit')</button>
                             </div>
+                            
                         </form>
                     </div>
                 </div>

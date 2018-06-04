@@ -15,8 +15,7 @@
                     <div class="layui-card-header">@lang('article.article_list')</div>
                     <div class="layui-card-body">
                         <div class="test-table-reload-btn" style="margin-bottom: 10px;">
-                            <a class="layui-btn layui-btn-normal" href="{{ route('admin.article.create') }}"><i
-                                        class="layui-icon">&#xe61f;</i>@lang('article.article_add')</a>
+                            <a class="layui-btn layui-btn-normal" href="{{ route('admin.article.create') }}"><i class="layui-icon">&#xe61f;</i>@lang('article.article_add')</a>
                         </div>
                         <div class="pagenormal">
                             <table class="layui-hide" id="articleList" lay-filter="articleList"></table>

@@ -6,26 +6,27 @@
                 <div class="layui-card">
                     <div class="layui-card-header">@lang('copyFrom.copy_from_add')</div>
                     <div class="layui-card-body" pad15="2">
-                        <form action="{{ route('admin.copy_from.store') }}" method="post"
-                              class="layui-form layui-form-pane">
+                        <form action="{{ route('admin.copy_from.store') }}" method="post" class="layui-form layui-form-pane">
+                            
                             <div class="layui-form-item">
                                 <label class="layui-form-label">@lang('copyFrom.name')</label>
                                 <div class="layui-input-block">
-                                    <input autocomplete="off" class="layui-input" lay-verify="required" name="name"
-                                           value="" placeholder="@lang('copyFrom.name')" type="text"/>
+                                    <input autocomplete="off" class="layui-input" lay-verify="required" name="name" value="" placeholder="@lang('copyFrom.name')" type="text"/>
                                 </div>
                             </div>
+                            
                             <div class="layui-form-item">
                                 <label class="layui-form-label">@lang('copyFrom.desc')</label>
                                 <div class="layui-input-block">
-                                    <input autocomplete="off" class="layui-input" name="desc" value=""
-                                           placeholder="@lang('copyFrom.desc')" type="text"/>
+                                    <input autocomplete="off" class="layui-input" name="desc" value="" placeholder="@lang('copyFrom.desc')" type="text"/>
                                 </div>
                             </div>
+                            
                             <div class="layui-form-item" style="text-align: center">
                                 {{ csrf_field() }}
                                 <button class="layui-btn layui-btn-normal" lay-submit=""><i class="layui-icon">&#xe609;</i> @lang('category.submit')</button>
                             </div>
+                            
                         </form>
                     </div>
                 </div>

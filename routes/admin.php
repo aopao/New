@@ -33,7 +33,7 @@ Route::namespace('Admin')->prefix(PREFIX)->middleware('auth')->group(function ()
 
     ##文章路由##
     Route::get('article/list', 'ArticleController@list')->name('admin.article.list');
-    Route::post('article/thumb/upload', 'ArticleController@upload')->name('admin.article..thumb.upload');
+    Route::post('article/thumb/upload', 'ArticleController@upload')->name('admin.article.thumb.upload');
     Route::resource('article', 'ArticleController', ['as' => 'admin']);
 
     ##友情链接路由##

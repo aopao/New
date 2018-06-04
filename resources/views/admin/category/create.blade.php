@@ -6,8 +6,7 @@
                 <div class="layui-card">
                     <div class="layui-card-header">@lang('category.category_add')</div>
                     <div class="layui-card-body" pad15="2">
-                        <form action="{{ route('admin.category.store') }}" method="post"
-                              class="layui-form layui-form-pane">
+                        <form action="{{ route('admin.category.store') }}" method="post" class="layui-form layui-form-pane">
                             <div class="layui-form-item">
                                 <label class="layui-form-label">@lang('category.parent_id')</label>
                                 <div class="layui-input-block">
@@ -21,15 +20,13 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">@lang('category.name')</label>
                                 <div class="layui-input-block">
-                                    <input autocomplete="off" class="layui-input" lay-verify="required" name="name"
-                                           value="" placeholder="@lang('category.name')" type="text"/>
+                                    <input autocomplete="off" class="layui-input" lay-verify="required" name="name" value="" placeholder="@lang('category.name')" type="text"/>
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">@lang('category.desc')</label>
                                 <div class="layui-input-block">
-                                    <input autocomplete="off" class="layui-input" name="desc" value=""
-                                           placeholder="@lang('category.desc')" type="text"/>
+                                    <input autocomplete="off" class="layui-input" name="desc" value="" placeholder="@lang('category.desc')" type="text"/>
                                 </div>
                             </div>
                             <div class="layui-form-item" style="text-align: center">

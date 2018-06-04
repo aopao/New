@@ -25,7 +25,7 @@ class CopyFromListPresenter
             } else {
                 $radio = "";
             }
-            $html .= '<input type="radio" '.$radio.' name="copyform_id" value="'.$value['id'].' " title="'.$value['name'].' ">';
+            $html .= "<input type=\"radio\" {$radio} name=\"copyform_id\" value=\"{$value['id']}\">".$value['name'];
         }
 
         return $html;

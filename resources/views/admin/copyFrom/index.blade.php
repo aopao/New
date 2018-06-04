@@ -7,8 +7,7 @@
                     <div class="layui-card-header">@lang('copyFrom.copy_from_list')</div>
                     <div class="layui-card-body">
                         <div class="test-table-reload-btn" style="margin-bottom: 10px;">
-                            <button class="layui-btn layui-btn-normal"
-                                    data-type="category_add"><i class="layui-icon">&#xe61f;</i>@lang('copyFrom.copy_from_add')</button>
+                            <button class="layui-btn layui-btn-normal" data-type="category_add"><i class="layui-icon">&#xe61f;</i>@lang('copyFrom.copy_from_add')</button>
                         </div>
                         <table class="layui-hide" id="copyFromList" lay-filter="copyFromList"></table>
                         <script type="text/html" id="copyFromListOperate">

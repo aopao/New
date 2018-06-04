@@ -7,8 +7,7 @@
                     <div class="layui-card-header">@lang('category.category_list')</div>
                     <div class="layui-card-body">
                         <div class="test-table-reload-btn" style="margin-bottom: 10px;">
-                            <button class="layui-btn layui-btn-normal"
-                                    data-type="category_add"><i class="layui-icon">&#xe61f;</i>@lang('category.category_add')</button>
+                            <button class="layui-btn layui-btn-normal" data-type="category_add"><i class="layui-icon">&#xe61f;</i>@lang('category.category_add')</button>
                         </div>
                         <table class="layui-hide" id="categorList" lay-filter="categorList"></table>
                         <script type="text/html" id="categorListOperate">
@@ -54,7 +53,7 @@
                         type: 2
                         , content: '{{ route('admin.category.create') }}'
                         , shadeClose: true
-                        , area: admin.screen() < 2 ? ['100%', '80%'] : ['50%', '355px']
+                        , area: admin.screen() < 2 ? ['100%', '80%'] : ['50%', '500px']
                         , maxmin: true
                     });
                 },
@@ -75,7 +74,7 @@
                         type: 2
                         , content: CategoryIndexUrl + '/' + data.id + '/edit'
                         , shadeClose: true
-                        , area: admin.screen() < 2 ? ['100%', '80%'] : ['50%', '355px']
+                        , area: admin.screen() < 2 ? ['100%', '80%'] : ['50%', '500px']
                         , maxmin: true
                     });
                 } else if (layEvent === 'del') { //删除
