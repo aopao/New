@@ -10,12 +10,8 @@
                         <div class="layui-form-item">
                             <label class="layui-form-label">@lang('friendLink.type')</label>
                             <div class="layui-input-block">
-                                <input type="radio" name="type" lay-filter="type"
-                                       value="1"
-                                       title="@lang('friendLink.title')" checked="">
-                                <input type="radio" name="type" value="0"
-                                       lay-filter="type"
-                                       title="@lang('friendLink.pic')">
+                                <input type="radio" name="type" lay-filter="type" value="1" title="@lang('friendLink.title')" checked="">
+                                <input type="radio" name="type" value="0" lay-filter="type" title="@lang('friendLink.pic')">
                             </div>
                         </div>
                         <div class="layui-form-item" id="title">
@@ -27,22 +23,18 @@
                          <div class="layui-form-item" id="pic" style="display: none;" >
                              <label class="layui-form-label" for="Thumb">@lang('friendLink.pic')</label>
                              <div class="layui-input-inline">
-                                 <input lay-verify="type" type="text" id="PicUrl" name="pic" autocomplete="off"
-                                        class="layui-input"/>
+                                 <input lay-verify="type" type="text" id="PicUrl" name="pic" autocomplete="off" class="layui-input"/>
                              </div>
-                             <button type="button" class="layui-btn layui-btn-primary"
-                                     style="width: 190px; border-color: #e6e6e6;" id="UploadPic">
+                             <button type="button" class="layui-btn layui-btn-primary" style="width: 190px; border-color: #e6e6e6;" id="UploadPic">
                                  <i class="layui-icon">&#xe60d; </i>@lang('friendLink.pic')
                              </button>
-                             <button type="button" class="layui-btn layui-btn-primary"
-                                     style="width: 190px; border-color: #e6e6e6;" id="ViewPic">
+                             <button type="button" class="layui-btn layui-btn-primary" style="width: 190px; border-color: #e6e6e6;" id="ViewPic">
                                  <i class="layui-icon">&#xe60d; </i>@lang('friendLink.view_pic')
                              </button>
                              <div id="PicHtml" style="display: none">
                                  <img src="" id="PicHtmlUrl" alt="">
                              </div>
-                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="PicTips"
-                                                                       style="display: none;color: #00a2d4"></span>
+                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="PicTips" style="display: none;color: #00a2d4"></span>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">@lang('friendLink.url')</label>
@@ -66,12 +58,8 @@
                         <div class="layui-form-item">
                             <label class="layui-form-label">@lang('friendLink.status')</label>
                             <div class="layui-input-block">
-                                <input type="radio" name="status" lay-filter="status"
-                                       value="1"
-                                       title="@lang('friendLink.status_on')" checked="">
-                                <input type="radio" name="status" value="0"
-                                       lay-filter="status"
-                                       title="@lang('friendLink.status_off')">
+                                <input type="radio" name="status" lay-filter="status" value="1" title="@lang('friendLink.status_on')" checked="">
+                                <input type="radio" name="status" value="0" lay-filter="status" title="@lang('friendLink.status_off')">
                             </div>
                         </div>
                         <div class="layui-form-item" style="text-align: center">
@@ -98,11 +86,11 @@
                 , upload = layui.upload
                 , index = parent.layer.getFrameIndex(window.name) //获取窗口索引
 				, laydate = layui.laydate;
-				
+
 			//执行一个laydate实例
 			laydate.render({
 				elem: '#LAY-component-form-group-date' //指定元素
-			});	
+			});
 
             form.on('radio(type)', function (data) {
                 if (data.value == 1) {

@@ -50,13 +50,14 @@ class FriendLinkServices
 	}
 
 
-
+	/**
+	 * @param $id
+	 * @return mixed|static
+	 */
 	public function getById($id)
 	{
 		return $this->friendLinkRepository->getById($id);
 	}
-
-
 
 
 
@@ -75,18 +76,14 @@ class FriendLinkServices
 	}
 
 	/**
-	 * @param array $array
+	 * @param $data
 	 * @return bool
 	 */
-	public function update(array $array)
+	public function update($data)
 	{
-		foreach( $array as $k=>$v) {
-			if($k == 'file') unset($array[$k]);
-			if($k == '_token') unset($array[$k]);
-			if($k == '_method') unset($array[$k]);
-		}
-
-		if ($this->friendLinkRepository->update($array)) {
+		$id = $data['id'];
+		unset($data['_token'], $data['_method'], $data['file']);
+		if ($this->friendLinkRepository->update($id, $data)) {
 			return TRUE;
 		} else {
 			return FALSE;
@@ -94,7 +91,10 @@ class FriendLinkServices
 	}
 
 
-
+	/**
+	 * @param $id
+	 * @return bool|int
+	 */
 	public function destroy($id)
 	{
 		if ($this->friendLinkRepository->destroy($id)) {

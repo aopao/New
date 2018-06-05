@@ -41,7 +41,9 @@ class FriendLinkController extends ApiController
 	}
 
 
-
+	/**
+	 * @return \Illuminate\Http\JsonResponse
+	 */
 	public function friendLinklist(Request $request)
 	{
 
@@ -76,7 +78,10 @@ class FriendLinkController extends ApiController
 	}
 
 
-
+	/**
+	 * @param $id
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
 	public function edit($id)
 	{
 		$friendLink_info = $this->friendLinkServices->getById($id);
@@ -113,11 +118,6 @@ class FriendLinkController extends ApiController
 
         return $this->responseSuccess($data);
     }
-
-
-
-
-
 
 
 

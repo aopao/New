@@ -39,22 +39,18 @@
                             <div class="layui-form-item" id="pic" >
                                 <label class="layui-form-label" for="Thumb">@lang('friendLink.pic')</label>
                                 <div class="layui-input-inline">
-                                    <input lay-verify="type" type="text" id="PicUrl" name="pic" value="{{$friendLink_info['pic']}}" autocomplete="off"
-                                           class="layui-input"/>
+                                    <input lay-verify="type" type="text" id="PicUrl" name="pic" value="{{$friendLink_info['pic']}}" autocomplete="off" class="layui-input"/>
                                 </div>
-                                <button type="button" class="layui-btn layui-btn-primary"
-                                        style="width: 190px; border-color: #e6e6e6;" id="UploadPic">
+                                <button type="button" class="layui-btn layui-btn-primary"  style="width: 190px; border-color: #e6e6e6;" id="UploadPic">
                                     <i class="layui-icon">&#xe60d; </i>@lang('friendLink.pic')
                                 </button>
-                                <button type="button" class="layui-btn layui-btn-primary"
-                                        style="width: 190px; border-color: #e6e6e6;" id="ViewPic">
+                                <button type="button" class="layui-btn layui-btn-primary" style="width: 190px; border-color: #e6e6e6;" id="ViewPic">
                                     <i class="layui-icon">&#xe60d; </i>@lang('friendLink.view_pic')
                                 </button>
                                 <div id="PicHtml" style="display: none">
                                     <img src="{{$friendLink_info['pic']}}" id="PicHtmlUrl" alt="">
                                 </div>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="PicTips"
-                                                                          style="display: none;color: #00a2d4"></span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="PicTips"  style="display: none;color: #00a2d4"></span>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">@lang('friendLink.url')</label>
@@ -80,19 +76,11 @@
                                 <div class="layui-input-block">
 
                                     @if($friendLink_info['status'] ==1)
-                                        <input type="radio" name="status" lay-filter="status"
-                                               value="1"
-                                               title="@lang('friendLink.status_on')" checked="">
-                                        <input type="radio" name="status" value="0"
-                                               lay-filter="status"
-                                               title="@lang('friendLink.status_off')">
+                                        <input type="radio" name="status" lay-filter="status" value="1" title="@lang('friendLink.status_on')" checked="">
+                                        <input type="radio" name="status" value="0" lay-filter="status" title="@lang('friendLink.status_off')">
                                     @else
-                                        <input type="radio" name="status" lay-filter="status"
-                                               value="1"
-                                               title="@lang('friendLink.status_on')" >
-                                        <input type="radio" name="status" value="0"
-                                               lay-filter="status"
-                                               title="@lang('friendLink.status_off')" checked="">
+                                        <input type="radio" name="status" lay-filter="status" value="1" title="@lang('friendLink.status_on')" >
+                                        <input type="radio" name="status" value="0" lay-filter="status" title="@lang('friendLink.status_off')" checked="">
                                     @endif
 
 

@@ -15,8 +15,12 @@ class FriendLinkRepository
 	 * @var $friendLink
 	 */
 	private $friendLink;
-	
-	
+
+	/**
+	 * FriendLinkRepository constructor.
+	 *
+	 * @param \App\Models\FriendLink $friendLink
+	 */
 	public function __construct(FriendLink $friendLink)
 	{
 		$this->friendLink = $friendLink;
@@ -54,8 +58,6 @@ class FriendLinkRepository
 
 
 	/**
-	 * 添加友情链接
-	 *
 	 * @param $array
 	 * @return bool
 	 */
@@ -67,14 +69,13 @@ class FriendLinkRepository
 
 
 	/**
-	 * 更新友情链接
-	 *
-	 * @param $array
+	 * @param $id
+	 * @param $data
 	 * @return bool
 	 */
-	public function update($array)
+	public function update($id, $data)
 	{
-		return $this->friendLink->where("id" , $array[ 'id' ])->update($array);
+		return $this->friendLink->where('id', $id)->update($data);
 	}
 
 

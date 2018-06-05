@@ -4,6 +4,11 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * Class FriendLinkRequest
+ *
+ * @package App\Http\Requests
+ */
 class FriendLinkRequest extends FormRequest
 {
 	/**
