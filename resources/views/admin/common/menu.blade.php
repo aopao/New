@@ -50,6 +50,19 @@
                     </dd>
                 </dl>
             </li>
+
+            <li data-name="user" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="用户" lay-direction="2">
+                    <i class="layui-icon layui-icon-set"></i>
+                    <cite>友情链接</cite>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a lay-href="{{ route('admin.friendLink.index') }}">友情链接</a>
+                    </dd>
+                </dl>
+            </li>
+
         </ul>
     </div>
 </div>

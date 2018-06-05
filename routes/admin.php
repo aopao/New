@@ -33,9 +33,12 @@ Route::namespace('Admin')->prefix(PREFIX)->middleware('auth')->group(function ()
 
     ##文章路由##
     Route::get('article/list', 'ArticleController@list')->name('admin.article.list');
-    Route::post('article/thumb/upload', 'ArticleController@upload')->name('admin.article..thumb.upload');
+    Route::post('article/thumb/upload', 'ArticleController@upload')->name('admin.article.thumb.upload');
     Route::resource('article', 'ArticleController', ['as' => 'admin']);
 
     ##友情链接路由##
-    Route::resource('link', 'FriendLinkController', ['as' => 'admin']);
+    Route::get('friendLink/friendLinklist' , 'FriendLinkController@friendLinklist')->name('admin.friendLink.friendLinklist');
+    Route::resource('friendLink' , 'FriendLinkController' , [ 'as' => 'admin' ]);
+    Route::post('friendLink/pic/upload' , 'FriendLinkController@upload')->name('admin.friendLink.pic.upload');
+
 });

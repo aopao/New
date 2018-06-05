@@ -177,7 +177,7 @@
                 , index = parent.layer.getFrameIndex(window.name); //获取窗口索引
 
             form.on('radio(is_http_url)', function (data) {
-                if (data.value == 1) {
+                if (data.value == 1) {excerpt
                     $('#excerpt').hide()
                     $('#content').hide()
                     $('#HttpUrl').show()
