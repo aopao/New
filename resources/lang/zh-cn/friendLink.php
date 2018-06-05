@@ -13,7 +13,7 @@ return [
 	'friendLink_delete' => '删除链接' ,
 	'search' => '搜索' ,
 	'add_submit' => '添加' ,
-	'edit_submit' => '编辑' ,
+	'edit_submit' => '修改' ,
 	'edit' => '修改' ,
 	'friendLink' => '友情链接' ,
 	'title' => '链接内容' ,
