@@ -204,7 +204,7 @@
                 elem: '#UploadThumb' //绑定元素
                 , accept: 'images'
                 , data: {_token: '{{ csrf_token() }}'}
-                , url: '{{ route('admin.article..thumb.upload') }}' //上传接口
+                , url: '{{ route('admin.article.thumb.upload') }}' //上传接口
                 , done: function (res) {
                     if (res.status_code === 200) {
                         $('#ThumbUrl').val(res.data.image_url);

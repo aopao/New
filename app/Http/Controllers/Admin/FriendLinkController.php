@@ -6,6 +6,7 @@ use App\Http\Requests\FriendLinkRequest;
 use App\Http\Requests\Request;
 use App\Services\FriendLinkServices;
 use App\Services\UploadServices;
+use Illuminate\Support\Facades\View;
 
 /**
  * Class FriendLinkController
@@ -31,7 +32,6 @@ class FriendLinkController extends ApiController
 		parent::__construct($statusCode);
 		$this->friendLinkServices = $friendLinkServices;
 	}
-	
 	/**
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
 	 */

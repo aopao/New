@@ -182,6 +182,12 @@ return [
  		*/
 		App\Providers\ComposerServiceProvider::class,
 		Overtrue\LaravelUEditor\UEditorServiceProvider::class,
+
+		/*
+		 * Laravel IDE helper
+ 		*/
+		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+
 	] ,
 	
 	/*
