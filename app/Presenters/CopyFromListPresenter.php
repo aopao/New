@@ -7,10 +7,21 @@ namespace App\Presenters;
  *
  * @package App\Presenters
  */
+/**
+ * Class CopyFromListPresenter
+ *
+ * @package App\Presenters
+ */
+/**
+ * Class CopyFromListPresenter
+ *
+ * @package App\Presenters
+ */
 class CopyFromListPresenter
 {
     /**
-     * @param $array
+     * @param     $array
+     * @param int $id
      * @return string
      */
     public function getRadioHtml($array, $id = 0)
