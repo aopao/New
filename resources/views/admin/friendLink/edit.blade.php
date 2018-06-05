@@ -67,7 +67,7 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">@lang('friendLink.expire_date')</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="expire_date" value="{{$friendLink_info['expire_date']}}" id="LAY-component-form-group-date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input" lay-key="1">
+                                    <input type="text" name="expire_date" value="{{$friendLink_info['expire_date']}}" id="LAY-component-form-group-date"  placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input" lay-key="1">
                                 </div>
 
                             </div>
