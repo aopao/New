@@ -5,11 +5,11 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * Class FriendLinkRequest
+ * Class ConfigRequest
  *
  * @package App\Http\Requests
  */
-class FriendLinkRequest extends FormRequest
+class Request extends FormRequest
 {
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -29,19 +29,17 @@ class FriendLinkRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			'title' => 'required_without:pic',
-			'pic' => 'required_without:title',
-			'url' => 'required|url' ,
+			
 		];
 	}
 	
+	/**
+	 * @return array
+	 */
 	public function messages()
 	{
 		return [
-			'title.required_without' => '请填写链接内容' ,
-			'pic.required_without' => '请选择链接图片' ,
-			'url.required' => '请填写链接地址' ,
-			'url.url' => '输入的链接地址不合法',
+			
 		];
 	}
 	
