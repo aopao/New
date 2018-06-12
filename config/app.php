@@ -184,6 +184,13 @@ return [
 		Overtrue\LaravelUEditor\UEditorServiceProvider::class,
 
 		/*
+		 * SendCloudServiceProvider
+		 */
+		Naux\Mail\SendCloudServiceProvider::class,
+
+
+
+		/*
 		 * Laravel IDE helper
  		*/
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
