@@ -22,7 +22,7 @@ class CreateActivitiesTable extends Migration
             $table->string('range')->comment('活动起止时间');
             $table->string('method')->comment('活动方式');
             $table->string('obj')->comment('活动对象');
-            $table->string('pic')->comment('活动图片');
+            $table->string('thumb')->comment('活动图片');
             $table->string('status')->default(1)->comment('活动状态');
 
             $table->timestamps();

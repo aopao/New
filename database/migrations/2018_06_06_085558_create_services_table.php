@@ -24,7 +24,7 @@ class CreateServicesTable extends Migration
             $table->string('teacher')->comment('服务师资');
             $table->string('method')->comment('服务方式');
             $table->string('obj')->comment('服务对象');
-            $table->string('pic')->comment('服务图片');
+            $table->string('thumb')->comment('服务图片');
             $table->string('status')->default(1)->comment('服务状态');
 
             $table->timestamps();
