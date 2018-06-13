@@ -46,7 +46,6 @@ class ActivityController extends ApiController
         $count = $this->activityServices->getAllCount();
         $activity_list = $this->activityServices->getAllByPage($request->all());
         return $this->responsePage($count, $activity_list);
-
     }
 
     /**
