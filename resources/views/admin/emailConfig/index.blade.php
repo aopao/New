@@ -8,7 +8,7 @@
                     <div class="layui-card-body" pad15="2">
                         <form action="{{ route('admin.emailConfig.update') }}" method="post" class="layui-form layui-form-pane">
 
-                            <div class="layui-form-item">
+                            <div class="layui-form-item" pane="">
                                 <label class="layui-form-label">@lang('emailConfig.MAIL_DRIVER')</label>
                                 <div class="layui-input-block">
                                     @if($emailConfigInfo["MAIL_DRIVER"] =='smtp')

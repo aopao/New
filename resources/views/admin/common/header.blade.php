@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ asset("theme/layui/css/layui.css") }}" media="all">
     <link rel="stylesheet" href="{{ asset("theme/style/admin.css") }}" media="all">
     <style>
-        .pagenormal .layui-laypage .layui-laypage-curr .layui-laypage-em {
+        .layui-laypage .layui-laypage-curr .layui-laypage-em {
             background-color: #1E9FFF !important;
         }
     </style>

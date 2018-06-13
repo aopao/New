@@ -81,7 +81,7 @@
         }).use(['index', 'table', 'laytpl'], function () {
             var $ = layui.$
                 , admin = layui.admin
-                , table = layui.table
+                , table = layui.table;
 
             table.render({
                 elem: '#articleList'
@@ -93,13 +93,7 @@
                     {field: 'id', title: 'ID', width: 50, fixed: true}
                     , {field: 'thumb', title: '缩略图', width: 80, templet: '#ThumbTpl', align: 'center'}
                     , {field: 'title', title: '标题', width: 350}
-                    , {
-                        field: 'category_id',
-                        title: '分类',
-                        width: 100,
-                        templet: '<div>@{{d.category.name}}</div>',
-                        align: 'center'
-                    }
+                    , {field: 'category_id', title: '分类', width: 100, templet: '<div>@{{d.category.name}}</div>', align: 'center'}
                     , {field: 'http_url', title: '类型', templet: '#HttpUrlTpl', align: 'center'}
                     , {field: 'is_top', title: '置顶', align: 'center', templet: '#IsTopTpl'}
                     , {field: 'is_remark', title: '推荐', align: 'center', templet: '#IsRemarkTpl'}

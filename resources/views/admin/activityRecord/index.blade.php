@@ -12,7 +12,7 @@
         <div class="layui-row layui-col-space15">
             <div class="layui-col-md12">
                 <div class="layui-card">
-                    <div class="layui-card-header">@lang('actiRecord.actiRecord_list')</div>
+                    <div class="layui-card-header">@lang('activityRecord.activityRecord_list')</div>
                     <div class="layui-card-body">
                         <table class="layui-hide" id="categorList" lay-filter="categorList"></table>
                     </div>
@@ -23,8 +23,8 @@
 @endsection()
 @section('js')
     <script>
-        let CategoryIndexUrl = '{{ route('admin.actiRecord.index') }}';
-        let CategoryListUrl = '{{ route('admin.actiRecord.actiRecordlist') }}';
+        let CategoryIndexUrl = '{{ route('admin.activityRecord.index') }}';
+        let CategoryListUrl = '{{ route('admin.activityRecord.activityRecordlist') }}';
         layui.config({
             base: '/theme/' //静态资源所在路径
         }).extend({

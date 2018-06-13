@@ -16,7 +16,7 @@ class CreateFriendLinksTable extends Migration
 		Schema::create('friend_links' , function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('title')->nullable()->comment('友情链接标题');
-			$table->string('pic')->nullable()->comment('友情链接图片地址');
+			$table->string('thumb')->nullable()->comment('友情链接图片地址');
 			$table->string('url')->comment('友情链接地址');
 			$table->string('type')->default(1)->comment('友情链接类型区分0:图片,1:文字');
 			$table->string('seat')->nullable()->comment('友情链接展示位置');

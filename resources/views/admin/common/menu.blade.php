@@ -136,7 +136,7 @@
                 </dl>
                 <dl class="layui-nav-child">
                     <dd>
-                        <a lay-href="{{ route('admin.actiRecord.index') }}">活动报名记录</a>
+                        <a lay-href="{{ route('admin.activityRecord.index') }}">活动报名记录</a>
                     </dd>
                 </dl>
             </li>
