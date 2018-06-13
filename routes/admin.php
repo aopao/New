@@ -44,7 +44,7 @@ Route::namespace('Admin')->prefix(PREFIX)->middleware('auth')->group(function ()
     ##服务管理路由##
     Route::get('service/list', 'ServiceController@servicelist')->name('admin.service.servicelist');
     Route::resource('service', 'ServiceController', ['as' => 'admin']);
-    Route::post('service/pic/upload', 'ServiceController@upload')->name('admin.service.pic.upload');
+    Route::post('service/thumb/upload', 'ServiceController@upload')->name('admin.service.thumb.upload');
 
     ##用户管理路由##
     Route::get('user/list', 'UserController@userlist')->name('admin.user.userlist');
@@ -73,7 +73,7 @@ Route::namespace('Admin')->prefix(PREFIX)->middleware('auth')->group(function ()
     ##活动管理路由##
     Route::get('activity/list', 'ActivityController@activitylist')->name('admin.activity.activitylist');
     Route::resource('activity', 'ActivityController', ['as' => 'admin']);
-    Route::post('activity/pic/upload', 'ActivityController@upload')->name('admin.activity.pic.upload');
+    Route::post('activity/thumb/upload', 'ActivityController@upload')->name('admin.activity.thumb.upload');
 
     ##报名记录路由##
     Route::get('actiRecord/activityRecord', 'ActivityRecordController@activityRecordlist')->name('admin.activityRecord.activityRecordlist');

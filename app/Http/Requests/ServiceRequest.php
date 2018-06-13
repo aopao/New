@@ -38,7 +38,7 @@ class ServiceRequest extends FormRequest
 			'teacher' => 'required',
 			'method' => 'required',
 			'obj' => 'required',
-			'pic' => 'required',
+			'thumb' => 'required',
 		];
 	}
 	
@@ -56,7 +56,7 @@ class ServiceRequest extends FormRequest
 			'teacher.required' => '请填写服务师资' ,
 			'method.required' => '请填写服务方式' ,
 			'obj.required' => '请填写服务对象' ,
-			'pic.required' => '请上传服务图片' ,
+			'thumb.required' => '请上传服务图片' ,
 
 
 		];

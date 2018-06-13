@@ -36,20 +36,20 @@
                                         </div>
 
                                         <div class="layui-form-item">
-                                            <label class="layui-form-label" for="Pic">@lang('activity.pic')</label>
+                                            <label class="layui-form-label" for="Thumb">@lang('activity.thumb')</label>
                                             <div class="layui-input-inline">
-                                                <input type="text" id="PicUrl" name="pic" value="{{ $activity_info['pic'] }}"  autocomplete="off" class="layui-input"/>
+                                                <input type="text" id="ThumbUrl" name="thumb" value="{{ $activity_info['thumb'] }}"  autocomplete="off" class="layui-input"/>
                                             </div>
-                                            <button type="button" class="layui-btn layui-btn-primary" style="width: 190px; border-color: #e6e6e6;" id="UploadPic">
-                                                <i class="layui-icon">&#xe60d; </i>@lang('activity.upload_pic')
+                                            <button type="button" class="layui-btn layui-btn-primary" style="width: 190px; border-color: #e6e6e6;" id="UploadThumb">
+                                                <i class="layui-icon">&#xe60d; </i>@lang('activity.upload_thumb')
                                             </button>
-                                            <button type="button" class="layui-btn layui-btn-primary" style="width: 190px; border-color: #e6e6e6;" id="ViewPic">
-                                                <i class="layui-icon">&#xe60d; </i>@lang('activity.view_pic')
+                                            <button type="button" class="layui-btn layui-btn-primary" style="width: 190px; border-color: #e6e6e6;" id="ViewThumb">
+                                                <i class="layui-icon">&#xe60d; </i>@lang('activity.view_thumb')
                                             </button>
-                                            <div id="PicHtml" style="display: none">
-                                                <img src="" id="PicHtmlUrl" alt="">
+                                            <div id="ThumbHtml" style="display: none">
+                                                <img src="" id="ThumbHtmlUrl" alt="">
                                             </div>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="PicTips" style="display: none;color: #00a2d4"></span>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="ThumbTips" style="display: none;color: #00a2d4"></span>
                                         </div>
 
                                         <div class="layui-form-item">
@@ -148,28 +148,28 @@
                 ,range: true
             });
 
-            $('#ViewPic').click(function () {
-                if ($('#PicHtmlUrl').attr('src') != '') {
+            $('#ViewThumb').click(function () {
+                if ($('#ThumbHtmlUrl').attr('src') != '') {
                     layer.open({
                         type: 1,
                         shade: false,
                         offset: '200px',
                         title: false, //不显示标题
-                        content: $('#PicHtml'),
+                        content: $('#ThumbHtml'),
                     });
                 }
             });
 
             upload.render({
-                elem: '#UploadPic' //绑定元素
+                elem: '#UploadThumb' //绑定元素
                 , accept: 'images'
                 , data: {_token: '{{ csrf_token() }}'}
-                , url: '{{ route('admin.activity.pic.upload') }}' //上传接口
+                , url: '{{ route('admin.activity.thumb.upload') }}' //上传接口
                 , done: function (res) {
                     if (res.status_code === 200) {
-                        $('#PicUrl').val(res.data.image_url);
-                        $('#PicHtmlUrl').attr('src', res.data.image_url);
-                        $('#PicTips').html('图片上传成功').show()
+                        $('#ThumbUrl').val(res.data.image_url);
+                        $('#ThumbHtmlUrl').attr('src', res.data.image_url);
+                        $('#ThumbTips').html('图片上传成功').show()
                     }
                 }
                 , error: function () {
@@ -218,10 +218,10 @@
             $('input[name="obj"]').focus();
             $('input[name="obj"]:focus').css({ "cssText": "border-color:red !important" });
             $('input[name="obj"]').attr('placeholder','{{ $errors->first('obj') }}');
-            @elseif($errors->has('pic'))
-            $('input[name="pic"]').focus();
-            $('input[name="pic"]:focus').css({ "cssText": "border-color:red !important" });
-            $('input[name="pic"]').attr('placeholder','{{ $errors->first('pic') }}');
+            @elseif($errors->has('thumb'))
+            $('input[name="thumb"]').focus();
+            $('input[name="thumb"]:focus').css({ "cssText": "border-color:red !important" });
+            $('input[name="thumb"]').attr('placeholder','{{ $errors->first('thumb') }}');
             @elseif($errors->has('status'))
             $('input[name="status"]').focus();
             $('input[name="status"]:focus').css({ "cssText": "border-color:red !important" });
