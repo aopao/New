@@ -7,6 +7,6 @@ return [
 	| Login Language Lines
 	|--------------------------------------------------------------------------
 	*/
-	'actiRecord_list' => '报名记录列表' ,
+	'activityRecord_list' => '报名记录列表' ,
 
 ];

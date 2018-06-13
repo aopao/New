@@ -17,6 +17,7 @@
                     </dd>
                 </dl>
             </li>
+
             <li data-name="user" class="layui-nav-item">
                 <a href="javascript:;" lay-tips="用户" lay-direction="2">
                     <i class="layui-icon layui-icon-read"></i>
@@ -58,7 +59,84 @@
                 </a>
                 <dl class="layui-nav-child">
                     <dd>
-                        <a lay-href="{{ route('admin.friendLink.index') }}">友情链接</a>
+                        <a lay-href="{{ route('admin.friendLink.index') }}">友情链接列表</a>
+                    </dd>
+                </dl>
+            </li>
+
+
+            <li data-name="user" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="用户" lay-direction="2">
+                    <i class="layui-icon layui-icon-set"></i>
+                    <cite>服务管理</cite>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a lay-href="{{ route('admin.service.index') }}">服务列表</a>
+                    </dd>
+                </dl>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a lay-href="{{ route('admin.payRecord.index') }}">服务购买记录</a>
+                    </dd>
+                </dl>
+            </li>
+
+            <li data-name="user" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="用户" lay-direction="2">
+                    <i class="layui-icon layui-icon-set"></i>
+                    <cite>前台用户管理</cite>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a lay-href="{{ route('admin.user.index') }}">前台用户列表</a>
+                    </dd>
+                </dl>
+            </li>
+
+            <li data-name="user" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="用户" lay-direction="2">
+                    <i class="layui-icon layui-icon-set"></i>
+                    <cite>邮件设置</cite>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a lay-href="{{ route('admin.emailConfig.index') }}">邮箱配置</a>
+                    </dd>
+                </dl>
+
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a lay-href="{{ route('admin.email.index') }}">邮件管理</a>
+                    </dd>
+                </dl>
+            </li>
+
+            <li data-name="user" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="用户" lay-direction="2">
+                    <i class="layui-icon layui-icon-set"></i>
+                    <cite>操作记录</cite>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a lay-href="{{ route('admin.operationLog.index') }}">操作记录列表</a>
+                    </dd>
+                </dl>
+            </li>
+
+            <li data-name="user" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="用户" lay-direction="2">
+                    <i class="layui-icon layui-icon-set"></i>
+                    <cite>活动管理</cite>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a lay-href="{{ route('admin.activity.index') }}">活动管理列表</a>
+                    </dd>
+                </dl>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a lay-href="{{ route('admin.activityRecord.index') }}">活动报名记录</a>
                     </dd>
                 </dl>
             </li>

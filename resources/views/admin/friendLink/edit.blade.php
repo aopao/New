@@ -8,7 +8,7 @@
                     <div class="layui-card-body" pad15="2">
                         <form action="{{ route('admin.friendLink.update',['id'=>$friendLink_info['id']]) }}" method="post" class="layui-form layui-form-pane">
                             {{--<input type="hidden" value="{{$friendLink_info['id']}}" name="id" >--}}
-                            <div class="layui-form-item">
+                            <div class="layui-form-item" pane="">
                                 <label class="layui-form-label">@lang('friendLink.type')</label>
                                 <div class="layui-input-block">
                                     @if($friendLink_info['type'] ==1)

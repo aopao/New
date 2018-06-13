@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Auth;
 use Session;
+use Route;
 use Closure;
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\Auth;
@@ -39,30 +40,30 @@ class AdminOperationLog
     public function handle($request, Closure $next)
     {
         $user_id = 0;
+        $account = '';
         if(Auth::check()) {
             $user_id = Auth::user()->id;
+            $account = Auth::user()->account;
         }
+
+
         $_SERVER['admin_uid'] = $user_id;
         if('GET' != $request->method()){
             $input = $request->all();
-            if($user_id == 0)
+            if(!array_key_exists("account",$input))
             {
-                    if(!array_key_exists("account",$input))
-                    {
-                        $input['account'] =  Auth::user()->account;
-                    }
+                $input['account'] =  $account;
+            }
 
-                    $user_id =
-                        $this->user
-                            ->where('account',$input['account'])
-                            ->orWhere('mobile',$input['account'])
-                            ->orWhere('email',$input['account'])
-                            ->value('id');
-                    if(empty($user_id))
-                    {
-                        $user_id = 0;
-                    }
-
+            $user_id =
+                $this->user
+                    ->where('account',$input['account'])
+                    ->orWhere('mobile',$input['account'])
+                    ->orWhere('email',$input['account'])
+                    ->value('id');
+            if(empty($user_id))
+            {
+                $user_id = 0;
             }
             $log = new OperationLog(); # 提前创建表、model
             $log->uid = $user_id;
