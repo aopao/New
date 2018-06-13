@@ -89,7 +89,7 @@
                         type: 2
                         , content: '{{ route('admin.user.create') }}'
                         , shadeClose: true
-                        , area: admin.screen() < 2 ? ['100%', '80%'] : ['50%', '500px']
+                        , area: admin.screen() < 2 ? ['100%', '80%'] : ['80%', '500px']
                         , maxmin: true
                     });
                 }

@@ -7,13 +7,14 @@
                 <div class="layui-card-header">@lang('friendLink.friendLink_add')</div>
                 <div class="layui-card-body" pad15="2">
                     <form action="{{ route('admin.friendLink.store') }}" method="post" class="layui-form layui-form-pane">
-                        <div class="layui-form-item">
+                        <div class="layui-form-item" pane="">
                             <label class="layui-form-label">@lang('friendLink.type')</label>
                             <div class="layui-input-block">
                                 <input type="radio" name="type" lay-filter="type" value="1" title="@lang('friendLink.title')" checked="">
                                 <input type="radio" name="type" value="0" lay-filter="type" title="@lang('friendLink.pic')">
                             </div>
                         </div>
+
                         <div class="layui-form-item" id="title">
                             <label class="layui-form-label">@lang('friendLink.title')</label>
                             <div class="layui-input-block">

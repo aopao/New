@@ -129,11 +129,7 @@ class FriendLinkController extends ApiController
 	{
 		$res = $this->friendLinkServices->destroy($id);
 		if ($res) {
-			if (is_numeric($res) && $res >= 1) {
-				return $this->setStatusCode(201)->responseSuccess();
-			} else {
-				return $this->setStatusCode(200)->responseSuccess();
-			}
+			return $this->setStatusCode(200)->responseSuccess();
 		} else {
 			return $this->setStatusCode(401)->responseErrors();
 		}

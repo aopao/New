@@ -53,7 +53,7 @@
                                 <input  autocomplete="off" class="layui-input" name="qq" value="{{ old('qq') }}" placeholder="@lang('user.qq')" type="text"/>
                             </div>
                         </div>
-                        <div class="layui-form-item">
+                        <div class="layui-form-item" pane="">
                             <label class="layui-form-label">@lang('user.status')</label>
                             <div class="layui-input-block">
                                 @if(old('status') ==1)
