@@ -36,7 +36,7 @@ class ActivityRequest extends FormRequest
 			'range' => 'required',
 			'method' => 'required',
 			'obj' => 'required',
-			'pic' => 'required',
+			'thumb' => 'required',
 		];
 	}
 
@@ -51,7 +51,7 @@ class ActivityRequest extends FormRequest
 			'range.required' => '请填写活动起止时间' ,
 			'method.required' => '请填写活动方式' ,
 			'obj.required' => '请填写活动对象' ,
-			'pic.required' => '请上传活动图片' ,
+			'thumb.required' => '请上传活动图片' ,
 
 
 		];

@@ -21,8 +21,8 @@
                             <table class="layui-hide" id="activityList" lay-filter="activityList"></table>
                         </div>
                         <script type="text/html" id="ThumbTpl">
-                            @{{# if (d.pic){ }}
-                            <img style="display: inline-block; height: 50px" src="@{{d.pic}}">
+                            @{{# if (d.thumb){ }}
+                            <img style="display: inline-block; height: 50px" src="@{{d.thumb}}">
                             @{{# }else{ }}
                             <img style="display: inline-block; height: 50px"
                                  src="/errorimg/error.jpg">
@@ -71,7 +71,7 @@
                     , {field: 'range', title: '起止时间', width: 150}
                     , {field: 'method', title: '方式', width: 350}
                     , {field: 'obj', title: '对象', width: 350}
-                    , {field: 'pic', title: '图片', width: 80, templet: '#ThumbTpl', align: 'center'}
+                    , {field: 'thumb', title: '图片', width: 80, templet: '#ThumbTpl', align: 'center'}
                     , {field: 'status', title: '状态', align: 'center', templet: '#StatusTpl'}
                     , {field: 'created_at', title: ' 创建时间', sort: true, align: 'center', width: 200}
                     , {align: 'center', title: '操作', width: 120, fixed: 'right', toolbar: '#categorListOperate'}
