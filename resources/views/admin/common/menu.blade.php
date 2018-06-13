@@ -50,6 +50,11 @@
                         <a lay-href="{{ route('admin.config.index') }}">系统设置</a>
                     </dd>
                 </dl>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a lay-href="{{ route('admin.config.email.index') }}">邮箱设置</a>
+                    </dd>
+                </dl>
             </li>
             
             <li data-name="user" class="layui-nav-item">

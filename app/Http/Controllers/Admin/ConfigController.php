@@ -21,7 +21,7 @@ class ConfigController extends ApiController
     /**
      * ConfigController constructor.
      *
-     * @param int $statusCode
+     * @param int            $statusCode
      * @param ConfigServices $configServices
      */
     public function __construct(int $statusCode = 200, ConfigServices $configServices)
@@ -36,8 +36,13 @@ class ConfigController extends ApiController
     public function index()
     {
         $configInfo = $this->configServices->getSingleArrayInfo();
-
         return view('admin.config.index', compact('configInfo'));
+    }
+
+    public function email()
+    {
+        $configInfo = $this->configServices->getSingleArrayInfo();
+        return view('admin.config.email', compact('configInfo'));
     }
 
     /**

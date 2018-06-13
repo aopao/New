@@ -29,6 +29,7 @@
     </div>
 @endsection()
 @section('js')
+    
     <script type="text/html" id="urlTpl">
         <a href="@{{ d.url }}">@{{ d.url }}</a>
     </script>

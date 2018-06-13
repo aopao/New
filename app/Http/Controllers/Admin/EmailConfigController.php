@@ -50,6 +50,4 @@ class EmailConfigController extends ApiController
         }
     }
 
-
-
 }

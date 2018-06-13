@@ -23,6 +23,9 @@ Route::namespace('Admin')->prefix(PREFIX)->middleware('auth')->group(function ()
     Route::get('config', 'ConfigController@index')->name('admin.config.index');
     Route::post('config/update', 'ConfigController@update')->name('admin.config.update');
 
+    Route::get('config/email', 'ConfigController@email')->name('admin.config.email.index');
+    Route::post('config/email/update', 'ConfigController@emailUpdate')->name('admin.config.email.update');
+
     ##文章分类路由##
     Route::get('category/list', 'CategoryController@categoryList')->name('admin.category.list');
     Route::resource('category', 'CategoryController', ['as' => 'admin']);
