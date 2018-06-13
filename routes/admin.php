@@ -41,4 +41,49 @@ Route::namespace('Admin')->prefix(PREFIX)->middleware('auth')->group(function ()
     Route::resource('friendLink' , 'FriendLinkController' , [ 'as' => 'admin' ]);
     Route::post('friendLink/pic/upload' , 'FriendLinkController@upload')->name('admin.friendLink.pic.upload');
 
+
+    ##服务管理路由##
+    Route::get('service/list', 'ServiceController@servicelist')->name('admin.service.servicelist');
+    Route::resource('service', 'ServiceController', ['as' => 'admin']);
+    Route::post('service/pic/upload' , 'ServiceController@upload')->name('admin.service.pic.upload');
+
+
+    ##用户管理路由##
+    Route::get('user/list', 'UserController@userlist')->name('admin.user.userlist');
+    Route::resource('user', 'UserController', ['as' => 'admin']);
+    Route::post('user/avatar/upload' , 'UserController@upload')->name('admin.user.avatar.upload');
+
+
+    ##购买记录路由##
+    Route::get('payRecord/payRecordlist' , 'PayRecordController@payRecordlist')->name('admin.payRecord.payRecordlist');
+    Route::resource('payRecord' , 'PayRecordController' , [ 'as' => 'admin' ]);
+
+
+    ##邮件管理路由##
+
+    ##邮箱配置路由##
+    Route::get('emailConfig', 'EmailConfigController@index')->name('admin.emailConfig.index');
+    Route::put('emailConfig/update', 'EmailConfigController@update')->name('admin.emailConfig.update');
+
+    ##邮件列表路由##
+    Route::get('email/list', 'EmailController@emaillist')->name('admin.email.list');
+    Route::get('email/send', 'EmailController@send')->name('admin.email.send');
+    Route::resource('email', 'EmailController', ['as' => 'admin']);
+
+
+    ##管理员操作记录路由##
+    Route::get('operationLog/operationLoglist' , 'OperationLogController@operationLoglist')->name('admin.operationLog.operationLoglist');
+    Route::resource('operationLog' , 'OperationLogController' , [ 'as' => 'admin' ]);
+
+
+    ##活动管理路由##
+    Route::get('activity/list', 'ActivityController@activitylist')->name('admin.activity.activitylist');
+    Route::resource('activity', 'ActivityController', ['as' => 'admin']);
+    Route::post('activity/pic/upload' , 'ActivityController@upload')->name('admin.activity.pic.upload');
+
+
+    ##报名记录路由##
+    Route::get('actiRecord/actiRecordlist' , 'ActiRecordController@actiRecordlist')->name('admin.actiRecord.actiRecordlist');
+    Route::resource('actiRecord' , 'ActiRecordController' , [ 'as' => 'admin' ]);
+
 });
