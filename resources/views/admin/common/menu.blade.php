@@ -43,6 +43,18 @@
             <li data-name="user" class="layui-nav-item">
                 <a href="javascript:;" lay-tips="用户" lay-direction="2">
                     <i class="layui-icon layui-icon-set"></i>
+                    <cite>菜单管理</cite>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a lay-href="{{ route('admin.menu.index') }}">菜单管理</a>
+                    </dd>
+                </dl>
+            </li>
+            
+            <li data-name="user" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="用户" lay-direction="2">
+                    <i class="layui-icon layui-icon-set"></i>
                     <cite>网站配置</cite>
                 </a>
                 <dl class="layui-nav-child">
@@ -95,6 +107,16 @@
                 <dl class="layui-nav-child">
                     <dd>
                         <a lay-href="{{ route('admin.user.index') }}">会员管理</a>
+                    </dd>
+                </dl>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a lay-href="{{ route('admin.permission.index') }}">权限管理</a>
+                    </dd>
+                </dl>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a lay-href="{{ route('admin.role.index') }}">角色管理</a>
                     </dd>
                 </dl>
             </li>

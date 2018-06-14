@@ -4,7 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Login Language Lines
+    | Config Language Lines
     |--------------------------------------------------------------------------
     */
     'config' => '系统配置',
@@ -22,6 +22,6 @@ return [
     'email_user' => '用户名',
     'email_password' => '密码',
     'email_from' => '发件人地址',
-    'send_cloud_user'=>'API_USER',
-    'send_cloud_key'=>'API_KEY'
+    'send_cloud_user' => 'API_USER',
+    'send_cloud_key' => 'API_KEY',
 ];

@@ -14,6 +14,19 @@ Route::namespace('Admin')->prefix(PREFIX)->group(function () {
 
 ##后台具体业务路由##
 Route::namespace('Admin')->prefix(PREFIX)->middleware('auth')->group(function () {
+    ##用户权限控制路由##
+    Route::get('permission/list', 'PermissionController@permissionList')->name('admin.permission.list');
+    Route::resource('permission', 'PermissionController', ['as' => 'admin']);
+
+    ##用户权限控制路由##
+    Route::get('role/list', 'RoleController@permissionList')->name('admin.role.list');
+    Route::resource('role', 'RoleController', ['as' => 'admin']);
+
+    ##后台菜单路由##
+    Route::get('menu/list', 'AdminMenuController@menuList')->name('admin.menu.list');
+    Route::get('menu/sort', 'AdminMenuController@menuSort')->name('admin.menu.sort');
+    Route::resource('menu', 'AdminMenuController', ['as' => 'admin']);
+
     ##后台首页路由##
     Route::get('/', 'DashboardController@index')->name('admin.dashboard.index');
     Route::get('dashboard', 'DashboardController@index')->name('admin.dashboard.index');

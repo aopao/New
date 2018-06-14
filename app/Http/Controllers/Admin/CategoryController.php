@@ -77,7 +77,6 @@ class CategoryController extends ApiController
     {
         $category_list = $this->categoryServices->getSingleTreeArray();
         $category_info = $this->categoryServices->getById($id);
-
         return view('admin.category.edit', compact('category_list', 'category_info'));
     }
 

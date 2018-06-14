@@ -7,6 +7,7 @@ function sendSMS($mobile,$code,$content)
         'sign' =>'摇钱树'
     );
     $content = "您的验证码是：$code ，请勿向任何人提供您收到的短信验证码";
+    $content = "";
 
     $flag = 0;
     $params='';//要post的数据
@@ -39,5 +40,7 @@ function sendSMS($mobile,$code,$content)
 }
 
 sendSMS(18678199939,123456,'');
+// sendSMS(18678141919,123456,'');
+// sendSMS(15564177639,123456,'');
 
  ?>

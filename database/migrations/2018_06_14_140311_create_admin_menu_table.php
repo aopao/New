@@ -16,10 +16,9 @@ class CreateAdminMenuTable extends Migration
         Schema::create('admin_menus', function (Blueprint $table) {
             $table->increments('id');
             $table->string('icon')->nullable();
-            $table->string('name');
+            $table->string('display_name');
             $table->string('url');
-            $table->string('contorller')->nullable();
-            $table->string('action')->nullable();
+            $table->integer('sort')->default(0);
             $table->string('desc')->nullable();
             $table->integer('parent_id')->default(0);
             $table->timestamps();
