@@ -80,8 +80,6 @@
                 ]]
             });
 
-
-
             //监听工具条
             //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
             table.on('tool(serviceList)', function (obj) {
