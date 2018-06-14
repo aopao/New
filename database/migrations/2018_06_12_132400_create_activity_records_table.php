@@ -15,8 +15,8 @@ class CreateActivityRecordsTable extends Migration
     {
         Schema::create('activity_records', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('uid')->comment('用户id');
-            $table->integer('aid')->comment('活动id');
+            $table->integer('user_id')->comment('用户id');
+            $table->integer('activity_id')->comment('活动id');
             $table->timestamps();
         });
     }

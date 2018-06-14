@@ -27,14 +27,17 @@ class ActivityRecordServices
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     * @return int
      */
-
     public function getAllCount()
     {
         return $this->activityRecordRepository->getAllCount();
     }
 
+    /**
+     * @param $data
+     * @return \Illuminate\Support\Collection
+     */
     public function getAllByPage($data)
     {
         $page = $data['page'] - 1;

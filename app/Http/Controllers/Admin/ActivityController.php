@@ -39,6 +39,7 @@ class ActivityController extends ApiController
     }
 
     /**
+     * @param \App\Http\Requests\Request $request
      * @return \Illuminate\Http\JsonResponse
      */
     public function activitylist(Request $request)

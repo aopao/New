@@ -11,5 +11,24 @@ use Illuminate\Database\Eloquent\Model;
  */
 class ActivityRecord extends Model
 {
-    protected $fillable = ['uid', 'aid', 'created_at'];
+    /**
+     * @var array
+     */
+    protected $fillable = ['user_id', 'activity_id', 'created_at'];
+
+    /**
+     *关联用户模型
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
+     *关联活动模型
+     */
+    public function activity()
+    {
+        return $this->belongsTo(Activity::class);
+    }
 }

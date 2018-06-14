@@ -49,7 +49,10 @@ class ActivityRepository
      */
     public function getAllByPage($offset, $limit)
     {
-        return $this->activity->skip($offset)->limit($limit)->orderBy('created_at', 'desc')->get();
+        return $this->activity->skip($offset)
+            ->limit($limit)
+            ->orderBy('created_at', 'desc')
+            ->get();
     }
 
     /**

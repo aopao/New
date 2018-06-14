@@ -58,8 +58,6 @@ Route::namespace('Admin')->prefix(PREFIX)->middleware('auth')->group(function ()
     Route::get('payRecord/payRecordlist', 'PayRecordController@payRecordlist')->name('admin.payRecord.payRecordlist');
     Route::resource('payRecord', 'PayRecordController', ['as' => 'admin']);
 
-    ##邮件管理路由##
-
     ##邮箱配置路由##
     Route::get('emailConfig', 'EmailConfigController@index')->name('admin.emailConfig.index');
     Route::put('emailConfig/update', 'EmailConfigController@update')->name('admin.emailConfig.update');
@@ -79,6 +77,6 @@ Route::namespace('Admin')->prefix(PREFIX)->middleware('auth')->group(function ()
     Route::post('activity/thumb/upload', 'ActivityController@upload')->name('admin.activity.thumb.upload');
 
     ##报名记录路由##
-    Route::get('actiRecord/activityRecord', 'ActivityRecordController@activityRecordlist')->name('admin.activityRecord.activityRecordlist');
+    Route::get('activityRecord/activityRecord', 'ActivityRecordController@activityRecordlist')->name('admin.activityRecord.activityRecordlist');
     Route::resource('activityRecord', 'ActivityRecordController', ['as' => 'admin']);
 });
