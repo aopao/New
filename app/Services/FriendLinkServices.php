@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use App\Http\Requests\Request;
 use App\Repositories\FriendLinkRepository;
 
 /**
@@ -100,8 +99,7 @@ class FriendLinkServices
         }
 
         $id = $data['id'];
-        unset($data['_token'], $data['_method'], $data['file'],$data['thumb_title']);
-
+        unset($data['_token'], $data['_method'], $data['file'], $data['thumb_title']);
 
         if ($this->friendLinkRepository->update($id, $data)) {
             return true;

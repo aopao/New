@@ -34,11 +34,19 @@ class ArticleRepository
         return $this->article->all();
     }
 
+    /**
+     * @return int
+     */
     public function getAllCount()
     {
         return $this->article->count();
     }
 
+    /**
+     * @param $offset
+     * @param $limit
+     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection|static[]
+     */
     public function getAllByPage($offset, $limit)
     {
         return $this->article->with('category', 'copyFrom')->skip($offset)->limit($limit)->orderBy('created_at', 'desc')->get();

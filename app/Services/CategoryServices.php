@@ -34,6 +34,10 @@ class CategoryServices
         return $this->categoryRepository->getAll();
     }
 
+    /**
+     * @param $id
+     * @return mixed|static
+     */
     public function getById($id)
     {
         return $this->categoryRepository->getById($id);
@@ -82,6 +86,10 @@ class CategoryServices
         }
     }
 
+    /**
+     * @param $data
+     * @return bool
+     */
     public function update($data)
     {
 

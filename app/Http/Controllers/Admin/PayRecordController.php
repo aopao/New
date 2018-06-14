@@ -37,11 +37,11 @@ class PayRecordController extends ApiController
 		return view('admin.payRecord.index');
 	}
 
-
-	/**
-	 * @return \Illuminate\Http\JsonResponse
-	 */
-	public function payRecordlist(Request $request)
+    /**
+     * @param \App\Http\Requests\Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function payRecordlist(Request $request)
 	{
 
 		$count = $this->payRecordServices->getAllCount();

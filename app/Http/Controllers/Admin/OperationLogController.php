@@ -37,11 +37,11 @@ class OperationLogController extends ApiController
 		return view('admin.operationLog.index');
 	}
 
-
-	/**
-	 * @return \Illuminate\Http\JsonResponse
-	 */
-	public function operationLoglist(Request $request)
+    /**
+     * @param \App\Http\Requests\Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function operationLoglist(Request $request)
 	{
 
 		$count = $this->operationLogServices->getAllCount();

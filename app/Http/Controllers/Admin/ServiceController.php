@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\ServiceRequest;
 use App\Http\Requests\Request;
 use App\Services\ServiceServices;
-use App\Services\UploadServices;
-use Illuminate\Support\Facades\View;
 
 /**
  * Class ServiceController
@@ -40,6 +38,7 @@ class ServiceController extends ApiController
     }
 
     /**
+     * @param \App\Http\Requests\Request $request
      * @return \Illuminate\Http\JsonResponse
      */
     public function servicelist(Request $request)
@@ -94,10 +93,8 @@ class ServiceController extends ApiController
         }
     }
 
-
-
     /**
-     * @param \Illuminate\Http\Request $request
+     * @param \App\Http\Requests\Request $request
      * @return \Illuminate\Http\JsonResponse
      */
     public function upload(Request $request)
@@ -107,8 +104,6 @@ class ServiceController extends ApiController
 
         return $this->responseSuccess($data);
     }
-
-
 
     /**
      * @param $id
@@ -123,10 +118,5 @@ class ServiceController extends ApiController
             return $this->setStatusCode(401)->responseErrors();
         }
     }
-
-
-
-
-
 
 }

@@ -3,16 +3,15 @@
 namespace App\Http\Middleware;
 
 use Auth;
-use Session;
-use Route;
 use Closure;
-use Illuminate\Http\Request;
-//use Illuminate\Support\Facades\Auth;
 use App\Models\OperationLog;
 use App\Models\User;
 
-
-
+/**
+ * Class AdminOperationLog
+ *
+ * @package App\Http\Middleware
+ */
 class AdminOperationLog
 {
 

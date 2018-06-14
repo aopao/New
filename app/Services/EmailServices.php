@@ -4,7 +4,6 @@ namespace App\Services;
 
 use App\Repositories\EmailRepository;
 
-
 /**
  * Class EmailServices
  *
@@ -35,26 +34,42 @@ class EmailServices
         return $this->emailRepository->getAll();
     }
 
+    /**
+     * @return \Illuminate\Support\Collection
+     */
     public function getUidList()
     {
         return $this->emailRepository->getUidList();
     }
 
+    /**
+     * @return int
+     */
     public function getAllCount()
     {
         return $this->emailRepository->getAllCount();
     }
+
+    /**
+     * @param $data
+     * @return \Illuminate\Support\Collection
+     */
     public function getAllByPage($data)
     {
         $page = $data['page'] - 1;
         $limit = $data['limit'];
         $offset = $page * $limit;
+
         return $this->emailRepository->getAllByPage($offset, $limit);
     }
 
+    /**
+     * @param $id
+     * @return mixed|static
+     */
     public function getById($id)
     {
-        return  $this->emailRepository->getById($id);
+        return $this->emailRepository->getById($id);
     }
 
     /**
@@ -72,8 +87,4 @@ class EmailServices
             return false;
         }
     }
-
-
-
-
 }

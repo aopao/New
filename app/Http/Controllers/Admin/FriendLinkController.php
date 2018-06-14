@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\FriendLinkRequest;
 use App\Http\Requests\Request;
 use App\Services\FriendLinkServices;
-use App\Services\UploadServices;
-use Illuminate\Support\Facades\View;
 
 /**
  * Class FriendLinkController

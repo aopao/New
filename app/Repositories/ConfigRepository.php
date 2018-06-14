@@ -48,6 +48,7 @@ class ConfigRepository
 
     /**
      * 根据字段名来更新系统配置
+     *
      * @param $key
      * @param $value
      * @return bool

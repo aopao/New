@@ -38,17 +38,19 @@ class ActivityServices
     {
         return $this->activityRepository->getAllCount();
     }
+
     public function getAllByPage($data)
     {
         $page = $data['page'] - 1;
         $limit = $data['limit'];
         $offset = $page * $limit;
+
         return $this->activityRepository->getAllByPage($offset, $limit);
     }
 
     public function getById($id)
     {
-        return  $this->activityRepository->getById($id);
+        return $this->activityRepository->getById($id);
     }
 
     /**
@@ -92,16 +94,13 @@ class ActivityServices
         }
     }
 
-
-    public function upload($disk,$request)
+    public function upload($disk, $request)
     {
         $upload = new UploadServices();
-        $res = $upload->updateImageStore($disk,$request);
-        $image_url = '/upload/other/'.(string)$res;
-        $data = ['image_url'=>$image_url];
+        $res = $upload->updateImageStore($disk, $request);
+        $image_url = '/upload/other/'.(string) $res;
+        $data = ['image_url' => $image_url];
+
         return $data;
     }
-
-
-
 }

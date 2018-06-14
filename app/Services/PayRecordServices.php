@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use App\Http\Requests\Request;
 use App\Repositories\PayRecordRepository;
 
 /**
@@ -12,39 +11,40 @@ use App\Repositories\PayRecordRepository;
  */
 class PayRecordServices
 {
+    /**
+     * @var $payRecordRepository
+     */
+    private $payRecordRepository;
 
-	/**
-	 * @var $payRecordRepository
-	 */
-	private $payRecordRepository;
+    /**
+     * PayRecordServices constructor.
+     *
+     * @param PayRecordRepository $payRecordRepository
+     */
+    public function __construct(PayRecordRepository $payRecordRepository)
+    {
+        $this->payRecordRepository = $payRecordRepository;
+    }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
 
-	/**
-	 * PayRecordServices constructor.
-	 *
-	 * @param PayRecordRepository $payRecordRepository
-	 */
-	public function __construct(PayRecordRepository $payRecordRepository)
-	{
-		$this->payRecordRepository = $payRecordRepository;
-	}
+    public function getAllCount()
+    {
+        return $this->payRecordRepository->getAllCount();
+    }
 
+    /**
+     * @param $data
+     * @return \Illuminate\Support\Collection
+     */
+    public function getAllByPage($data)
+    {
+        $page = $data['page'] - 1;
+        $limit = $data['limit'];
+        $offset = $page * $limit;
 
-	/**
-	 * @return \Illuminate\Database\Eloquent\Collection|static[]
-	 */
-
-	public function getAllCount()
-	{
-		return $this->payRecordRepository->getAllCount();
-	}
-	public function getAllByPage($data)
-	{
-		$page = $data['page'] - 1;
-		$limit = $data['limit'];
-		$offset = $page * $limit;
-		return $this->payRecordRepository->getAllByPage($offset, $limit);
-	}
-	
-	
+        return $this->payRecordRepository->getAllByPage($offset, $limit);
+    }
 }

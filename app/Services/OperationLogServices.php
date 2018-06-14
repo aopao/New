@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use App\Http\Requests\Request;
 use App\Repositories\OperationLogRepository;
 
 /**
@@ -37,7 +36,12 @@ class OperationLogServices
 	{
 		return $this->operationLogRepository->getAllCount();
 	}
-	public function getAllByPage($data)
+
+    /**
+     * @param $data
+     * @return \Illuminate\Support\Collection
+     */
+    public function getAllByPage($data)
 	{
 		$page = $data['page'] - 1;
 		$limit = $data['limit'];

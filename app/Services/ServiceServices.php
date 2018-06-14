@@ -34,21 +34,34 @@ class ServiceServices
         return $this->serviceRepository->getAll();
     }
 
+    /**
+     * @return int
+     */
     public function getAllCount()
     {
         return $this->serviceRepository->getAllCount();
     }
+
+    /**
+     * @param $data
+     * @return \Illuminate\Support\Collection
+     */
     public function getAllByPage($data)
     {
         $page = $data['page'] - 1;
         $limit = $data['limit'];
         $offset = $page * $limit;
+
         return $this->serviceRepository->getAllByPage($offset, $limit);
     }
 
+    /**
+     * @param $id
+     * @return mixed|static
+     */
     public function getById($id)
     {
-        return  $this->serviceRepository->getById($id);
+        return $this->serviceRepository->getById($id);
     }
 
     /**
@@ -66,6 +79,10 @@ class ServiceServices
         }
     }
 
+    /**
+     * @param $data
+     * @return bool
+     */
     public function update($data)
     {
 
@@ -92,16 +109,18 @@ class ServiceServices
         }
     }
 
-
-    public function upload($disk,$request)
+    /**
+     * @param $disk
+     * @param $request
+     * @return array
+     */
+    public function upload($disk, $request)
     {
         $upload = new UploadServices();
-        $res = $upload->updateImageStore($disk,$request);
-        $image_url = '/upload/other/'.(string)$res;
-        $data = ['image_url'=>$image_url];
+        $res = $upload->updateImageStore($disk, $request);
+        $image_url = '/upload/other/'.(string) $res;
+        $data = ['image_url' => $image_url];
+
         return $data;
     }
-
-
-
 }

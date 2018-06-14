@@ -11,24 +11,24 @@ use Illuminate\Foundation\Http\FormRequest;
  */
 class EmailRequest extends FormRequest
 {
-	/**
-	 * Determine if the user is authorized to make this request.
-	 *
-	 * @return bool
-	 */
-	public function authorize()
-	{
-		return TRUE;
-	}
-	
-	/**
-	 * Get the validation rules that apply to the request.
-	 *
-	 * @return array
-	 */
-	public function rules()
-	{
-		return [
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
 //			'title' => 'required',
 //			'subtitle' => 'required',
 //			'desc' => 'required',
@@ -39,12 +39,12 @@ class EmailRequest extends FormRequest
 //			'method' => 'required',
 //			'obj' => 'required',
 //			'pic' => 'required',
-		];
-	}
-	
-	public function messages()
-	{
-		return [
+        ];
+    }
+
+    public function messages()
+    {
+        return [
 //			'title.required' => '请填写服务标题' ,
 //			'subtitle.required' => '请填写服务副标题' ,
 //			'desc.required' => '请填写服务简介' ,
@@ -58,8 +58,6 @@ class EmailRequest extends FormRequest
 //			'obj.required' => '请填写服务对象' ,
 //			'pic.required' => '请上传服务图片' ,
 
-
-		];
-	}
-	
+        ];
+    }
 }

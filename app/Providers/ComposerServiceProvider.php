@@ -14,10 +14,10 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-		#向视图中传递共享变量
-		View::composer(
-			'*' , 'App\ViewComposers\ConfigComposer'
-		);
+        #向视图中传递共享变量
+        View::composer(
+            '*', 'App\ViewComposers\ConfigComposer'
+        );
     }
 
     /**

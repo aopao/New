@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use App\Http\Requests\Request;
 use App\Repositories\ActivityRecordRepository;
 
 /**
@@ -12,39 +11,36 @@ use App\Repositories\ActivityRecordRepository;
  */
 class ActivityRecordServices
 {
+    /**
+     * @var $activityRecordRepository
+     */
+    private $activityRecordRepository;
 
-	/**
-	 * @var $activityRecordRepository
-	 */
-	private $activityRecordRepository;
+    /**
+     * ActivityRecordServices constructor.
+     *
+     * @param ActivityRecordRepository $activityRecordRepository
+     */
+    public function __construct(ActivityRecordRepository $activityRecordRepository)
+    {
+        $this->activityRecordRepository = $activityRecordRepository;
+    }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
 
-	/**
-	 * ActivityRecordServices constructor.
-	 *
-	 * @param ActivityRecordRepository $activityRecordRepository
-	 */
-	public function __construct(ActivityRecordRepository $activityRecordRepository)
-	{
-		$this->activityRecordRepository = $activityRecordRepository;
-	}
+    public function getAllCount()
+    {
+        return $this->activityRecordRepository->getAllCount();
+    }
 
+    public function getAllByPage($data)
+    {
+        $page = $data['page'] - 1;
+        $limit = $data['limit'];
+        $offset = $page * $limit;
 
-	/**
-	 * @return \Illuminate\Database\Eloquent\Collection|static[]
-	 */
-
-	public function getAllCount()
-	{
-		return $this->activityRecordRepository->getAllCount();
-	}
-	public function getAllByPage($data)
-	{
-		$page = $data['page'] - 1;
-		$limit = $data['limit'];
-		$offset = $page * $limit;
-		return $this->activityRecordRepository->getAllByPage($offset, $limit);
-	}
-	
-	
+        return $this->activityRecordRepository->getAllByPage($offset, $limit);
+    }
 }

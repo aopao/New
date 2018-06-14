@@ -37,11 +37,11 @@ class ActivityRecordController extends ApiController
 		return view('admin.activityRecord.index');
 	}
 
-
-	/**
-	 * @return \Illuminate\Http\JsonResponse
-	 */
-	public function activityRecordlist(Request $request)
+    /**
+     * @param \App\Http\Requests\Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function activityRecordlist(Request $request)
 	{
 
 		$count = $this->activityRecordServices->getAllCount();
