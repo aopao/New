@@ -43,16 +43,16 @@
             <li data-name="user" class="layui-nav-item">
                 <a href="javascript:;" lay-tips="用户" lay-direction="2">
                     <i class="layui-icon layui-icon-set"></i>
-                    <cite>系统设置</cite>
+                    <cite>网站配置</cite>
                 </a>
                 <dl class="layui-nav-child">
                     <dd>
-                        <a lay-href="{{ route('admin.config.index') }}">系统设置</a>
+                        <a lay-href="{{ route('admin.config.index') }}">系统配置</a>
                     </dd>
                 </dl>
                 <dl class="layui-nav-child">
                     <dd>
-                        <a lay-href="{{ route('admin.config.email.index') }}">邮箱设置</a>
+                        <a lay-href="{{ route('admin.config.email.index') }}">邮箱配置</a>
                     </dd>
                 </dl>
             </li>
@@ -64,7 +64,7 @@
                 </a>
                 <dl class="layui-nav-child">
                     <dd>
-                        <a lay-href="{{ route('admin.friendLink.index') }}">友情链接列表</a>
+                        <a lay-href="{{ route('admin.friendLink.index') }}">友情链接管理</a>
                     </dd>
                 </dl>
             </li>
@@ -90,11 +90,11 @@
             <li data-name="user" class="layui-nav-item">
                 <a href="javascript:;" lay-tips="用户" lay-direction="2">
                     <i class="layui-icon layui-icon-set"></i>
-                    <cite>前台用户管理</cite>
+                    <cite>会员管理</cite>
                 </a>
                 <dl class="layui-nav-child">
                     <dd>
-                        <a lay-href="{{ route('admin.user.index') }}">前台用户列表</a>
+                        <a lay-href="{{ route('admin.user.index') }}">会员管理</a>
                     </dd>
                 </dl>
             </li>

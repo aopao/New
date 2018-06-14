@@ -51,6 +51,20 @@
                                         </div>
                                     </div>
                                     <div class="layui-tab-item">
+                                        
+                                        <div class="layui-form-item" id="MAIL_HOST">
+                                            <label class="layui-form-label">@lang('config.send_cloud_user')</label>
+                                            <div class="layui-input-block">
+                                                <input autocomplete="off" class="layui-input" lay-verify="required" name="send_cloud_user" value="{{ $configInfo["send_cloud_user"] or '未设置' }}" placeholder="@lang('config.send_cloud_user')" type="text"/>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">@lang('config.send_cloud_key')</label>
+                                            <div class="layui-input-block">
+                                                <input autocomplete="off" class="layui-input" lay-verify="required" name="send_cloud_key" value="{{ $configInfo["send_cloud_key"] or '未设置' }}" placeholder="@lang('config.send_cloud_key')" type="text"/>
+                                            </div>
+                                        </div>
                                     
                                     </div>
                                     <div class="layui-form-item">
@@ -61,7 +75,6 @@
                             </div>
                         </form>
                     </div>
-                
                 </div>
             </div>
         </div>

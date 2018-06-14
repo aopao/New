@@ -45,12 +45,11 @@
                 , page: true
                 , limit: 30
                 , cols: [[
-                    {field: 'id', title: 'ID', width: 50, fixed: true}
+                    {field: 'id', title: 'ID', width: 100, fixed: true}
                     , {field: 'account', title: '管理员账号'}
                     , {field: 'path', title: '操作路径'}
                     , {field: 'method', title: '访问方式'}
                     , {field: 'created_at', title: '操作时间', sort: true}
-
                 ]]
 
             });

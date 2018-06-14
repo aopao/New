@@ -11,43 +11,49 @@ use App\Models\Config;
  */
 class ConfigRepository
 {
-	/**
-	 * @var config
-	 */
-	private $config;
-	
-	/**
-	 * ConfigRepository constructor.
-	 *
-	 * @param $config $config
-	 */
-	public function __construct(Config $config)
-	{
-		$this->config = $config;
-	}
-	
-	/**
-	 * @return \Illuminate\Database\Eloquent\Collection|static[]
-	 */
-	public function getAll()
-	{
-		return $this->config->all();
-	}
-	
-	
-	/**
-	 * 根据字段名来更新系统配置
-	 * @param $array
-	 * @return bool
-	 */
-	public function updateByName($array)
-	{
-		$flag = TRUE;
-		unset($array[ "_token" ]);
-		foreach ($array as $key => $value) {
-			$flag = $this->config->where("key" , $key)->update([ "value" => $value ]);
-		}
-		return $flag;
-	}
-	
+    /**
+     * @var config
+     */
+    private $config;
+
+    /**
+     * ConfigRepository constructor.
+     *
+     * @param $config $config
+     */
+    public function __construct(Config $config)
+    {
+        $this->config = $config;
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function getAll()
+    {
+        return $this->config->all();
+    }
+
+    /**
+     * @param $key
+     * @param $value
+     * @return $this|\Illuminate\Database\Eloquent\Model
+     */
+    public function create($key, $value)
+    {
+        $data = ['key' => $key, 'value' => $value];
+
+        return $this->config->create($data);
+    }
+
+    /**
+     * 根据字段名来更新系统配置
+     * @param $key
+     * @param $value
+     * @return bool
+     */
+    public function updateByName($key, $value)
+    {
+        return $this->config->where("key", $key)->update(["value" => $value]);
+    }
 }

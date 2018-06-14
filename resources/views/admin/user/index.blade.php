@@ -57,9 +57,6 @@
                 , table = layui.table
             ;
 
-
-
-
             table.render({
                 elem: '#categorList'
                 , url: CategoryListUrl
@@ -68,28 +65,26 @@
                 , limit: 30
                 , cols: [[
                     {field: 'id', title: 'ID', width: 50, fixed: true}
-                    {{--, {field: 'title', title: '链接内容'}--}}
-                    , {field: 'avatar', title: '头像',width: 100,templet:'#ThumbTpl'}
-                    , {field: 'account', title: '账号',width: 100}
-                    , {field: 'nickname', title: '昵称',width: 100}
-                    , {field: 'mobile', title: '手机号',width: 150}
+                    , {field: 'avatar', title: '头像', width: 100, templet: '#ThumbTpl'}
+                    , {field: 'account', title: '账号', width: 100}
+                    , {field: 'nickname', title: '昵称', width: 100}
+                    , {field: 'mobile', title: '手机号', width: 150}
                     , {field: 'email', title: '邮箱'}
                     , {field: 'created_at', title: ' 创建时间', sort: true}
-                    , {field: 'status', title: '状态',width: 90,templet: '#statusTpl'}
-                    , {align: 'center',title:'操作', fixed: 'right',width: 120, toolbar: '#categorListOperate'}
+                    , {field: 'status', title: '状态', width: 90, templet: '#statusTpl'}
+                    , {align: 'center', title: '操作', fixed: 'right', width: 120, toolbar: '#categorListOperate'}
 
                 ]]
 
             });
-
-
+            
             active = {
                 category_add: function () {
                     layer.open({
                         type: 2
                         , content: '{{ route('admin.user.create') }}'
                         , shadeClose: true
-                        , area: admin.screen() < 2 ? ['100%', '80%'] : ['80%', '500px']
+                        , area: admin.screen() < 2 ? ['100%', '80%'] : ['80%', '600px']
                         , maxmin: true
                     });
                 }
@@ -110,7 +105,7 @@
                         type: 2
                         , content: CategoryIndexUrl + '/' + data.id + '/edit'
                         , shadeClose: true
-                        , area: admin.screen() < 2 ? ['100%', '80%'] : ['50%', '500px']
+                        , area: admin.screen() < 2 ? ['100%', '80%'] : ['80%', '600px']
                         , maxmin: true
                     });
                 } else if (layEvent === 'del') { //删除
@@ -127,7 +122,7 @@
                             type: "DELETE",
                             data: {"id": data.id},
                             dataType: "json",
-                            success: function (data)	 {
+                            success: function (data) {
                                 if (data.status_code === 200) {
                                     //删除这一行
                                     obj.del();
