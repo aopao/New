@@ -14,7 +14,7 @@ class ActivityRecord extends Model
     /**
      * @var array
      */
-    protected $fillable = ['user_id', 'activity_id', 'created_at'];
+    protected $fillable = ['user_id', 'activity_id'];
 
     /**
      *关联用户模型

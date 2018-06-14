@@ -66,7 +66,7 @@ class UserRepository
 
     /**
      * @param $array
-     * @return bool
+     * @return $this|\Illuminate\Database\Eloquent\Model
      */
     public function store($array)
     {
