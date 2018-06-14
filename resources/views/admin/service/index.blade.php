@@ -20,22 +20,7 @@
                         <div class="pagenormal">
                             <table class="layui-hide" id="serviceList" lay-filter="serviceList"></table>
                         </div>
-                        <script type="text/html" id="ThumbTpl">
-                            @{{# if (d.thumb){ }}
-                            <img style="display: inline-block; height: 50px" src="@{{d.thumb}}">
-                            @{{# }else{ }}
-                            <img style="display: inline-block; height: 50px"
-                                 src="/errorimg/error.jpg">
-                            @{{# } }}
-                        </script>
-                        <script type="text/html" id="StatusTpl">
-                            @{{# if (d.status==0){ }}
-                            <span class="layui-badge layui-bg-orange">未发布</span>
-                            @{{# }else if (d.status==1){ }}
-                            <span class="layui-badge layui-bg-blue">已发布</span>
-                            @{{# } }}
-                        </script>
-                        <script type="text/html" id="categorListOperate">
+                        <script type="text/html" id="serviceListOperate">
                             <button class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit">编辑</button>
                             <button class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</button>
                         </script>
@@ -46,6 +31,21 @@
     </div>
 @endsection()
 @section('js')
+    <script type="text/html" id="ThumbTpl">
+        @{{# if (d.thumb){ }}
+        <img style="display: inline-block; height: 50px" src="@{{d.thumb}}">
+        @{{# }else{ }}
+        <img style="display: inline-block; height: 50px"
+             src="/errorimg/error.jpg">
+        @{{# } }}
+    </script>
+    <script type="text/html" id="StatusTpl">
+        @{{# if (d.status==0){ }}
+        <span class="layui-badge layui-bg-orange">未发布</span>
+        @{{# }else if (d.status==1){ }}
+        <span class="layui-badge layui-bg-blue">已发布</span>
+        @{{# } }}
+    </script>
     <script>
         let ServiceIndexUrl = '{{ route('admin.service.index') }}';
         let ServiceListUrl = '{{ route('admin.service.servicelist') }}';
@@ -76,7 +76,7 @@
                     , {field: 'thumb', title: '图片', width: 80, templet: '#ThumbTpl', align: 'center'}
                     , {field: 'status', title: '状态', align: 'center', templet: '#StatusTpl'}
                     , {field: 'created_at', title: ' 创建时间', sort: true, align: 'center', width: 200}
-                    , {align: 'center', title: '操作', width: 120, fixed: 'right', toolbar: '#categorListOperate'}
+                    , {align: 'center', title: '操作', width: 120, fixed: 'right', toolbar: '#serviceListOperate'}
                 ]]
             });
 

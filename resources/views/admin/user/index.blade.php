@@ -15,25 +15,10 @@
                     <div class="layui-card-header">@lang('user.user_list')</div>
                     <div class="layui-card-body">
                         <div class="test-table-reload-btn" style="margin-bottom: 10px;">
-                            <button class="layui-btn layui-btn-normal" data-type="category_add">@lang('user.user_add')</button>
+                            <button class="layui-btn layui-btn-normal" data-type="category_add"><i class="layui-icon">&#xe61f;</i>@lang('user.user_add')</button>
                         </div>
-                        <table class="layui-hide" id="categorList" lay-filter="categorList"></table>
-                        <script type="text/html" id="statusTpl">
-                            @{{#  if(d.status == 1){ }}
-                            <span class="layui-badge layui-bg-green">正常</span>
-                            @{{#  } else { }}
-                            <span class="layui-badge layui-bg-orange">禁封</span>
-                            @{{#  } }}
-                        </script>
-                        <script type="text/html" id="ThumbTpl">
-                            @{{# if (d.avatar){ }}
-                            <img style="display: inline-block; height: 50px" src="@{{d.avatar}}">
-                            @{{# }else{ }}
-                            <img style="display: inline-block; height: 50px"
-                                 src="/errorimg/error.jpg">
-                            @{{# } }}
-                        </script>
-                        <script type="text/html" id="categorListOperate">
+                        <table class="layui-hide" id="userList" lay-filter="userList"></table>
+                        <script type="text/html" id="userListOperate">
                             <button class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit">编辑</button>
                             <button class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</button>
                         </script>
@@ -44,6 +29,21 @@
     </div>
 @endsection()
 @section('js')
+    <script type="text/html" id="statusTpl">
+        @{{#  if(d.status == 1){ }}
+        <span class="layui-badge layui-bg-green">正常</span>
+        @{{#  } else { }}
+        <span class="layui-badge layui-bg-orange">禁封</span>
+        @{{#  } }}
+    </script>
+    <script type="text/html" id="ThumbTpl">
+        @{{# if (d.avatar){ }}
+        <img style="display: inline-block; height: 50px" src="@{{d.avatar}}">
+        @{{# }else{ }}
+        <img style="display: inline-block; height: 50px"
+             src="/errorimg/error.jpg">
+        @{{# } }}
+    </script>
     <script>
         let CategoryIndexUrl = '{{ route('admin.user.index') }}';
         let CategoryListUrl = '{{ route('admin.user.userlist') }}';
@@ -58,7 +58,7 @@
             ;
 
             table.render({
-                elem: '#categorList'
+                elem: '#userList'
                 , url: CategoryListUrl
                 , cellMinWidth: 80
                 , page: true
@@ -72,12 +72,12 @@
                     , {field: 'email', title: '邮箱'}
                     , {field: 'created_at', title: ' 创建时间', sort: true}
                     , {field: 'status', title: '状态', width: 90, templet: '#statusTpl'}
-                    , {align: 'center', title: '操作', fixed: 'right', width: 120, toolbar: '#categorListOperate'}
+                    , {align: 'center', title: '操作', fixed: 'right', width: 120, toolbar: '#userListOperate'}
 
                 ]]
 
             });
-            
+
             active = {
                 category_add: function () {
                     layer.open({
@@ -97,7 +97,7 @@
 
             //监听工具条
             //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
-            table.on('tool(categorList)', function (obj) {
+            table.on('tool(userList)', function (obj) {
                 let layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
                 let data = obj.data;
                 if (layEvent === 'edit') { //编辑
@@ -137,8 +137,6 @@
                     });
                 }
             });
-
-
         });
     </script>
 @endsection()

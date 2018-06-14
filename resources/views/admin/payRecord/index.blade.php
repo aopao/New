@@ -14,7 +14,7 @@
                 <div class="layui-card">
                     <div class="layui-card-header">@lang('payRecord.payRecord_list')</div>
                     <div class="layui-card-body">
-                        <table class="layui-hide" id="categorList" lay-filter="categorList"></table>
+                        <table class="layui-hide" id="payRecordList" lay-filter="payRecordList"></table>
                     </div>
                 </div>
             </div>
@@ -23,23 +23,16 @@
 @endsection()
 @section('js')
     <script>
-        let CategoryIndexUrl = '{{ route('admin.payRecord.index') }}';
         let CategoryListUrl = '{{ route('admin.payRecord.payRecordlist') }}';
         layui.config({
             base: '/theme/' //静态资源所在路径
         }).extend({
             index: 'lib/index' //主入口模块
         }).use(['index', 'table'], function () {
-            var $ = layui.$
-                , admin = layui.admin
-                , table = layui.table
-            ;
-
-
-
+            var table = layui.table;
 
             table.render({
-                elem: '#categorList'
+                elem: '#payRecordList'
                 , url: CategoryListUrl
                 , cellMinWidth: 80
                 , page: true
@@ -52,11 +45,8 @@
                     , {field: 'price', title: '付款金额'}
                     , {field: 'num', title: '商户单号'}
                     , {field: 'paytime', title: '付款时间', sort: true}
-
                 ]]
-
             });
-
         });
     </script>
 @endsection()

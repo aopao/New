@@ -20,22 +20,7 @@
                         <div class="pagenormal">
                             <table class="layui-hide" id="activityList" lay-filter="activityList"></table>
                         </div>
-                        <script type="text/html" id="ThumbTpl">
-                            @{{# if (d.thumb){ }}
-                            <img style="display: inline-block; height: 50px" src="@{{d.thumb}}">
-                            @{{# }else{ }}
-                            <img style="display: inline-block; height: 50px"
-                                 src="/errorimg/error.jpg">
-                            @{{# } }}
-                        </script>
-                        <script type="text/html" id="StatusTpl">
-                            @{{# if (d.status==0){ }}
-                            <span class="layui-badge layui-bg-orange">未发布</span>
-                            @{{# }else if (d.status==1){ }}
-                            <span class="layui-badge layui-bg-blue">已发布</span>
-                            @{{# } }}
-                        </script>
-                        <script type="text/html" id="categorListOperate">
+                        <script type="text/html" id="activityListOperate">
                             <button class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit">编辑</button>
                             <button class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</button>
                         </script>
@@ -46,6 +31,21 @@
     </div>
 @endsection()
 @section('js')
+    <script type="text/html" id="ThumbTpl">
+        @{{# if (d.thumb){ }}
+        <img style="display: inline-block; height: 50px" src="@{{d.thumb}}">
+        @{{# }else{ }}
+        <img style="display: inline-block; height: 50px"
+             src="/errorimg/error.jpg">
+        @{{# } }}
+    </script>
+    <script type="text/html" id="StatusTpl">
+        @{{# if (d.status==0){ }}
+        <span class="layui-badge layui-bg-orange">未发布</span>
+        @{{# }else if (d.status==1){ }}
+        <span class="layui-badge layui-bg-blue">已发布</span>
+        @{{# } }}
+    </script>
     <script>
         let ActivityIndexUrl = '{{ route('admin.activity.index') }}';
         let ActivityListUrl = '{{ route('admin.activity.activitylist') }}';
@@ -66,19 +66,16 @@
                 , limit: 30
                 , cols: [[
                     {field: 'id', title: 'ID', width: 50, fixed: true}
-                    , {field: 'title', title: '标题', width: 350}
-                    , {field: 'subtitle', title: '副标题', width: 350}
-                    , {field: 'range', title: '起止时间', width: 150}
-                    , {field: 'method', title: '方式', width: 350}
-                    , {field: 'obj', title: '对象', width: 350}
                     , {field: 'thumb', title: '图片', width: 80, templet: '#ThumbTpl', align: 'center'}
+                    , {field: 'title', title: '标题', }
+                    , {field: 'range', title: '起止时间'}
+                    , {field: 'method', title: '方式'}
+                    , {field: 'obj', title: '对象'}
                     , {field: 'status', title: '状态', align: 'center', templet: '#StatusTpl'}
-                    , {field: 'created_at', title: ' 创建时间', sort: true, align: 'center', width: 200}
-                    , {align: 'center', title: '操作', width: 120, fixed: 'right', toolbar: '#categorListOperate'}
+                    , {field: 'created_at', title: ' 创建时间', sort: true, align: 'center'}
+                    , {align: 'center', title: '操作', fixed: 'right', toolbar: '#activityListOperate'}
                 ]]
             });
-
-
 
             //监听工具条
             //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"

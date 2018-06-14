@@ -14,7 +14,7 @@
                 <div class="layui-card">
                     <div class="layui-card-header">@lang('activityRecord.activityRecord_list')</div>
                     <div class="layui-card-body">
-                        <table class="layui-hide" id="categorList" lay-filter="categorList"></table>
+                        <table class="layui-hide" id="activityRecordList" lay-filter="activityRecordList"></table>
                     </div>
                 </div>
             </div>
@@ -23,23 +23,15 @@
 @endsection()
 @section('js')
     <script>
-        let CategoryIndexUrl = '{{ route('admin.activityRecord.index') }}';
         let CategoryListUrl = '{{ route('admin.activityRecord.activityRecordlist') }}';
         layui.config({
             base: '/theme/' //静态资源所在路径
         }).extend({
             index: 'lib/index' //主入口模块
         }).use(['index', 'table'], function () {
-            var $ = layui.$
-                , admin = layui.admin
-                , table = layui.table
-            ;
-
-
-
-
+            var table = layui.table;
             table.render({
-                elem: '#categorList'
+                elem: '#activityRecordList'
                 , url: CategoryListUrl
                 , cellMinWidth: 80
                 , page: true
@@ -49,11 +41,8 @@
                     , {field: 'mobile', title: '用户手机号'}
                     , {field: 'title', title: '活动标题'}
                     , {field: 'created_at', title: '报名时间', sort: true}
-
                 ]]
-
             });
-
         });
     </script>
 @endsection()
